@@ -65,13 +65,17 @@ namespace skaf
                     break;
                 }
                 else {
-                    using (StreamReader reader = new StreamReader(path[i]))
+                    using (StreamReader reader = new(path[i]))
                     {
+                        
                         string conteudo = reader.ReadToEnd();
                         using (StreamWriter writer = new StreamWriter(System.IO.Path.Combine(caminhoModelo, $"Email_{i + 1}.txt")))
                         {
+                            
                             writer.WriteLine(conteudo);
                             writer.Flush();
+
+
                         }
                     }
                 }
@@ -84,11 +88,27 @@ namespace skaf
 
         private async void ProntoBt(object sender, RoutedEventArgs e)
         {
-            try { await CriarPasta(filePaths, TextBoxFile.Text); } catch(Exception ex) {}
+            if (TextBoxFile.Text.Equals(string.Empty))
+            {
+                MessageBox.Show("Por favor, atribua um nome ao modelo");
 
-            EmailGroupBox gp = new EmailGroupBox(TextBoxFile.Text);
-            principal.conteiner.Children.Add(gp);
-            DockPanel.SetDock(gp, Dock.Top);
+
+            }
+            else
+            {
+                try { await CriarPasta(filePaths, TextBoxFile.Text); }
+                catch (Exception) {
+                   
+                }
+              
+
+                EmailGroupBox gp = new EmailGroupBox(TextBoxFile.Text);
+                principal.conteiner.Children.Add(gp);
+                gp.HorizontalAlignment = HorizontalAlignment.Stretch;
+                DockPanel.SetDock(gp, Dock.Top);
+
+            }
+           
           
         }
     }

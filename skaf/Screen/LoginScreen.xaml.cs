@@ -4,6 +4,11 @@ using System.Windows.Input;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using Microsoft.Identity.Client;
+using Microsoft.Graph;
+using System;
+using System.Threading.Tasks;
+using Microsoft.Kiota.Abstractions.Authentication;
+using Microsoft.Identity.Client.NativeInterop;
 namespace skaf
 {
     /// <summary>
@@ -11,6 +16,8 @@ namespace skaf
     /// </summary>
     public partial class LoginScreen : Window
     {
+
+        public  static User ?usuario;
         public LoginScreen()
         {
             InitializeComponent();
@@ -46,7 +53,7 @@ namespace skaf
                     EasingFunction = new QuadraticEase() { EasingMode = EasingMode.EaseOut }
 
                 });
-            DoubleAnimation joi = new DoubleAnimation()
+            DoubleAnimation joi = new()
             {
                 Duration = TimeSpan.FromSeconds(3),
                 From = 126,
@@ -101,7 +108,27 @@ namespace skaf
 
         private async void Logar(object sender, RoutedEventArgs e)
         {
-            await Login();
+            if (Properties.Settings.Default.primeiroLogin)
+            {
+                await Login();
+            }
+            else
+            {
+                await SilentLogin();
+            }
+
+        }
+        public async Task SilentLogin() {
+        var cca = PublicClientApplicationBuilder.Create("1a6e7e51-b9a3-4036-ba0a-12560ce5fd47")
+                .WithDefaultRedirectUri()
+                .Build();
+            var scopes = new[] { "https://graph.microsoft.com/User.Read" };
+            
+            try { var result = await cca.AcquireTokenSilent(scopes,"famigerado").ExecuteAsync();
+                MessageBox.Show("token"+result.AccessToken);
+            
+            
+            } catch (Exception) { await Login(); }
         }
 
         public async Task Login() {
@@ -111,14 +138,24 @@ namespace skaf
             var scopes = new[] { "https://graph.microsoft.com/User.Read" };
             try {
                 var result = await cca.AcquireTokenInteractive(scopes).ExecuteAsync();
-                var accessToken = result.AccessToken;
-                new JanelaPrincipal().Show();
+              
+                    new JanelaPrincipal().Show();
+                Properties.Settings.Default.Nome = result.Account.Username;
+                Properties.Settings.Default.token = result.AccessToken;
+                Properties.Settings.Default.Save();
+                usuario = new User(result.Account.Username,result.AccessToken);
                 this.Close();
             }
             catch (Exception ex)
             {
-                Clipboard.SetText(ex.Message);
-                MessageBox.Show("Falha ao executar Login!: \n"+ex.Message);
+                if (ex.Message.Contains("User canceled")) {
+
+                }
+                else
+                {
+                    MessageBox.Show("Falha ao executar Login!: \n" + ex.Message);
+                }
+                
             }
            
             

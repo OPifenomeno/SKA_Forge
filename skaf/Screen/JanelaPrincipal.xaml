@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:skaf"
         mc:Ignorable="d"
-        Title="JanelaPrincipal" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" Background="Transparent" >
+        Title="JanelaPrincipal" Height="450" Width="798" WindowStyle="None" AllowsTransparency="True" Background="Transparent" >
     <Grid Margin="0" Background="White">
         <DockPanel LastChildFill="False">
             <Grid DockPanel.Dock="Top" Height="38" Background="#FF0767B7" MouseLeftButtonDown="drag">
@@ -15,7 +15,7 @@
                     </Rectangle.OpacityMask>
 
                 </Rectangle>
-                <Rectangle MouseLeftButtonDown="Rectangle_MouseLeftButtonDown" Height="32" Margin="736,0,28,0" VerticalAlignment="Center" RadiusX="13.5" RadiusY="13.5" Fill="#FF16324A">
+                <Rectangle MouseLeftButtonDown="Rectangle_MouseLeftButtonDown" Height="32" Margin="731,0,28,0" VerticalAlignment="Center" RadiusX="13.5" RadiusY="13.5" Fill="#FF16324A">
                     <Rectangle.Style>
                         <Style TargetType="Rectangle">
                             <Setter Property="Cursor" Value="Arrow"/>
@@ -27,7 +27,7 @@
                         </Style>
                     </Rectangle.Style>
                 </Rectangle>
-                <Rectangle MouseLeftButtonDown="AbrirMenu" Height="32" Margin="688,0,76,0" VerticalAlignment="Center" RadiusX="13.5" RadiusY="13.5" Fill="#FF16324A">
+                <Rectangle MouseLeftButtonDown="AbrirMenu" Height="32" Margin="677,0,82,0" VerticalAlignment="Center" RadiusX="13.5" RadiusY="13.5" Fill="#FF16324A">
                     <Rectangle.Style>
                         <Style TargetType="{x:Type Rectangle}">
                             <Setter Property="Cursor" Value="Arrow"/>
@@ -43,14 +43,8 @@
 
             </Grid>
             <Grid Width="799">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition x:Name="linhaMenu" Width="799"/>
-                </Grid.ColumnDefinitions>
-                <StackPanel Panel.ZIndex="5" x:Name="MenuBar" HorizontalAlignment="Left" Margin="0,0,0,-1" Background="#FF055486" MaxWidth="295" Width="0
-                            " >
+
+                <StackPanel Panel.ZIndex="5" x:Name="MenuBar" HorizontalAlignment="Left" Margin="0,0,0,-1" Background="#FF055486" MaxWidth="295" Width="0" >
                     <UIElement.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="1"/>
@@ -61,7 +55,7 @@
                     </UIElement.RenderTransform>
                     <Grid Height="89">
                         <Image HorizontalAlignment="Left" Margin="21,10,0,13" Width="68" Source="/Screen/user.png"/>
-                        <Label Content="Configurações&#xD;&#xA;" Margin="97,24,30,22" FontSize="20"/>
+                        <Label x:Name="userName" Content="Configurações&#xD;&#xA;" Margin="97,24,30,22" FontSize="20"/>
                     </Grid>
                     <Button Content="Perfil
                             " Height="64" BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False">
@@ -102,7 +96,9 @@
 
                 </StackPanel>
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <DockPanel x:Name="conteiner" LastChildFill="false" Margin="0,0,0,59"/>
+                    <DockPanel x:Name="conteiner" LastChildFill="false" Margin="0,0,0,59">
+
+                    </DockPanel>
                 </ScrollViewer>
 
 

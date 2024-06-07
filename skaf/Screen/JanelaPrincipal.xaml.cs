@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
 
 namespace skaf
 {
@@ -22,14 +20,21 @@ namespace skaf
         }
          void carregarModelos() {
                     DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));
-                    past.GetDirectories().ToList().ForEach(dir =>
-                    {
-                        EmailGroupBox gp = new EmailGroupBox(dir.Name);
-                        Canvas.SetZIndex(gp, 4);
-                        DockPanel.SetDock(gp, Dock.Top) ;
-                        conteiner.Children.Add(gp);
+            if (past.Exists)
+            {
+                past.GetDirectories().ToList().ForEach(dir =>
+                {
+                    EmailGroupBox gp = new EmailGroupBox(dir.Name);
+                    Canvas.SetZIndex(gp, 4);
+                    DockPanel.SetDock(gp, Dock.Top);
+                    conteiner.Children.Add(gp);
 
-                    });
+                });
+            }
+            else {
+                past.Create();
+                carregarModelos();
+            }
                 }
 
 
@@ -59,8 +64,11 @@ namespace skaf
 
         
 
-        private void AbrirMenu(object sender, MouseButtonEventArgs e)
+        public void AbrirMenu(object sender, MouseButtonEventArgs e)
         {
+            if(LoginScreen.usuario != null) {
+                userName.Content = LoginScreen.usuario.Name;
+            }
             if (MenuBar.Width != MenuBar.MaxWidth)
             {
                 MenuBar.BeginAnimation(WidthProperty, new DoubleAnimation
@@ -69,7 +77,9 @@ namespace skaf
                     To = MenuBar.MaxWidth,
                     Duration = TimeSpan.FromSeconds(1),
                     EasingFunction = new QuadraticEase() {EasingMode=EasingMode.EaseInOut}
+                    
                 });
+                
             }
             else {
             MenuBar.BeginAnimation(WidthProperty, new DoubleAnimation

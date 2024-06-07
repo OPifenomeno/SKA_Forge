@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace skaf
+namespace skaf.Screen
 {
     /// <summary>
-    /// Interação lógica para Início.xam
+    /// Lógica interna para Config.xaml
     /// </summary>
-    public partial class Início : Page
+    public partial class Config : Window
     {
-        public Início()
+        public Config()
         {
             InitializeComponent();
         }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:skaf"
         mc:Ignorable="d"
-        Title="LoginScreen" Height="325" Width="590" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        Title="LoginScreen" Height="325" Width="590" AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize" Topmost="False" WindowStartupLocation="CenterScreen" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid>
         <Ellipse x:Name="bolaBack" HorizontalAlignment="Center" Height="0" Stroke="Black" VerticalAlignment="Center" Width="0" Fill="White" Loaded="Load"/>
         <Canvas x:Name="graphs" Loaded="Animar">
