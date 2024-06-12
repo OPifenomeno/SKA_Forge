@@ -12,6 +12,7 @@
     <None Remove="res\Apresentação1.mp4" />
     <None Remove="res\Logo_SKA_Azul.png" />
     <None Remove="res\Microsoft_logo.png" />
+    <None Remove="Screen\alek2.png" />
     <None Remove="Screen\user.png" />
   </ItemGroup>
 
@@ -29,6 +30,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="res\user.png" />
+    <Resource Include="Screen\alek2.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -65,8 +66,6 @@ namespace skaf.Screen
             }
         }
 
-     
-
         private void ExcluirModelo(object sender, MouseButtonEventArgs e)
         {
             dir.Delete();
@@ -90,7 +89,8 @@ namespace skaf.Screen
             try {
                 string caminhoAntigo = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", gpM.ModelName.Text, $"{ultimoBt}");
                 string caminhoNovo = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", gpM.ModelName.Text, $"{titleBox.Text}.txt");
-                File.Move(caminhoAntigo, caminhoNovo);
+                if (!File.Exists(caminhoNovo)) { File.Move(caminhoAntigo, caminhoNovo); }
+                
                 LoadModel();
                 using (StreamWriter sw = new StreamWriter(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", gpM.ModelName.Text, $"{titleBox.Text}.txt")))
                 {
@@ -122,26 +122,66 @@ namespace skaf.Screen
 
         private void addAnexo(object sender, RoutedEventArgs e)
         {
+            SalvarModel(sender,e);
             if(!Directory.Exists(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", "Anexos")))
             {
                 Directory.CreateDirectory(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", "Anexos"));
             }
-            DirectoryInfo diretorioPasta = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", "Anexos"););
+            DirectoryInfo diretorioPasta = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", "Anexos"));
 
             var fd = new Microsoft.Win32.OpenFileDialog();
             fd.Multiselect = true;
             bool? result = fd.ShowDialog();
 
             
-            if (result == true) {
-                foreach (var item in fd.FileNames)
+
+                if (result == true)
                 {
-                    //copiar arquivos para pasta Anexos
-                    FileInfo fl = new FileInfo(item);
-                    File.Copy(fl.FullName,diretorioPasta);
+                    foreach (var item in fd.FileNames)
+                    {
+                        //copiar arquivos para pasta Anexos
+                        FileInfo fl = new FileInfo(item);
+                    if (!diretorioPasta.GetFiles().Any(file => file.Name == fl.Name))
+                    {
+                        File.Copy(fl.FullName, System.IO.Path.Combine(diretorioPasta.FullName, fl.Name));
+                    }
+
                     //adicionar no e-mail.
+                    TextRange tr = new TextRange(TextMail.Document.ContentStart, TextMail.Document.ContentEnd);
+                    string conteudoA = tr.Text;
+                    string newC = $"Attachment: {System.IO.Path.Combine(diretorioPasta.FullName, fl.Name)};\n{conteudoA}";
+                    try
+                    {
+                        File.WriteAllText(System.IO.Path.Combine(diretorioPasta.FullName, fl.Name),string.Empty);
+                        File.WriteAllText(System.IO.Path.Combine(diretorioPasta.FullName, fl.Name), newC);
+                        TextMail.Document.Blocks.Clear();
+                        TextMail.AppendText(newC);
+                        
+                    }
+                    catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+                        //using (StreamWriter sw = new StreamWriter(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", gpM.ModelName.Text, $"{titleBox.Text}")))
+                        //{
+                        //    TextRange tr = new TextRange(TextMail.Document.ContentStart, TextMail.Document.ContentEnd);
+                        //    conteudoA = tr.Text;
+                        //    sw.Write($"Attachment: {System.IO.Path.Combine(diretorioPasta.FullName, fl.Name)};\n{conteudoA}");
+
+                    //}
+                    }
                 }
+            
+
+            SalvarModel(sender ,e);
+            Button? btFind = buttonPanel.Children.OfType<Button>().FirstOrDefault(btn => btn.Content.ToString() == $"{titleBox.Text}");
+            if (btFind != null)
+            {
+                btFind.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
             }
+            else { MessageBox.Show("a"); }
         }
+
+
+
+
     }
 }

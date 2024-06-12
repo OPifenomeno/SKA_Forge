@@ -24,11 +24,12 @@ namespace skaf
             {
                 past.GetDirectories().ToList().ForEach(dir =>
                 {
+                    if (dir.Name != "Anexos") { 
                     EmailGroupBox gp = new EmailGroupBox(dir.Name);
                     Canvas.SetZIndex(gp, 4);
                     DockPanel.SetDock(gp, Dock.Top);
                     conteiner.Children.Add(gp);
-
+                    }
                 });
             }
             else {

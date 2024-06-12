@@ -5,6 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:skaf.Screen"
         mc:Ignorable="d"
-        Title="Config" Height="450" Width="800">
-    <Grid/>
-</Window>
+        Title="Config" Height="292" Width="800">
+    <Grid Background="#FFE8E8E8">
+
+        <Ellipse HorizontalAlignment="Left" Height="616" VerticalAlignment="Center" Width="670" Fill="#FFBDBDBD" Margin="199,0,0,0"/>
+
+        <Image HorizontalAlignment="Left" Height="174" Margin="24,53,0,0" VerticalAlignment="Top" Width="170" Source="/Screen/alek2.png" RenderTransformOrigin="0.366,0.268"/>
+
+
+        <TextBox HorizontalAlignment="Left" Margin="232,69,0,0" Text="@NOME" VerticalAlignment="Top" Width="558" Height="28" FontFamily="Arial Black" FontSize="24" MaxLines="1" BorderBrush="White" SelectionBrush="#FF7A7D80">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Setters>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border Background="White" CornerRadius="10">
+                                        <ContentPresenter Content="@NOME" HorizontalAlignment="Left" Margin="9,0,0,0"></ContentPresenter>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style.Setters>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <TextBox HorizontalAlignment="Left" Margin="232,195,0,0" Text="@LINKEDIN" VerticalAlignment="Top" Width="558" Height="28" FontFamily="Arial Black" FontSize="24" MaxLines="1" BorderBrush="White" SelectionBrush="#FF7A7D80">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Setters>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border Background="White" CornerRadius="10">
+                                        <ContentPresenter Content="@NOME" HorizontalAlignment="Left" Margin="9,0,0,0"></ContentPresenter>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style.Setters>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <TextBox HorizontalAlignment="Left" Margin="232,149,0,0" Text="@FONE" VerticalAlignment="Top" Width="558" Height="28" FontFamily="Arial Black" FontSize="24" MaxLines="1" BorderBrush="White" SelectionBrush="#FF7A7D80" TextChanged="TextBox_TextChanged_1">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Setters>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border Background="White" CornerRadius="10">
+                                        <ContentPresenter Content="@NOME" HorizontalAlignment="Left" Margin="9,0,0,0"></ContentPresenter>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style.Setters>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+        <TextBox HorizontalAlignment="Left" Margin="232,109,0,0" Text="@NOME" VerticalAlignment="Top" Width="558" Height="28" FontFamily="Arial Black" FontSize="24" MaxLines="1" BorderBrush="White" SelectionBrush="#FF7A7D80">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Setters>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Border Background="White" CornerRadius="10">
+                                        <ContentPresenter Content="Pessoas &amp; Cultura" HorizontalAlignment="Left" Margin="9,0,0,0"></ContentPresenter>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style.Setters>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+    </Grid>
+</Window> 
