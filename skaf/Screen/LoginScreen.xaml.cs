@@ -6,9 +6,11 @@ using System.Windows.Media.Animation;
 using Microsoft.Identity.Client;
 using Microsoft.Graph;
 using System;
+using Azure.Identity;
 using System.Threading.Tasks;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Identity.Client.NativeInterop;
+using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default;
 namespace skaf
 {
     /// <summary>
@@ -18,6 +20,7 @@ namespace skaf
     {
 
         public  static User ?usuario;
+        public static GraphServiceClient graphClient;
         public LoginScreen()
         {
             InitializeComponent();
@@ -122,6 +125,7 @@ namespace skaf
         var cca = PublicClientApplicationBuilder.Create("1a6e7e51-b9a3-4036-ba0a-12560ce5fd47")
                 .WithDefaultRedirectUri()
                 .Build();
+            
             var scopes = new[] { "https://graph.microsoft.com/User.Read" };
             
             try { var result = await cca.AcquireTokenSilent(scopes,"famigerado").ExecuteAsync();
@@ -135,12 +139,31 @@ namespace skaf
 
             var cca = PublicClientApplicationBuilder.Create("1a6e7e51-b9a3-4036-ba0a-12560ce5fd47")
                 .WithDefaultRedirectUri().Build();
+
+
+            var ss = new[] { "User.Read" };
+            var options = new DeviceCodeCredentialOptions
+            {
+                AuthorityHost = AzureAuthorityHosts.AzurePublicCloud,
+                ClientId = "1a6e7e51-b9a3-4036-ba0a-12560ce5fd47",
+                TenantId = "5f2bb378-929d-431f-8874-fe83e34bec89",
+               
+                DeviceCodeCallback = (code, cancellation) =>
+                {
+                    Console.WriteLine(code.Message);
+                    return Task.FromResult(0);
+                },
+            };
+            var deviceCode = new DeviceCodeCredential(options);
+            graphClient  = new GraphServiceClient(deviceCode,ss);
+
             var scopes = new[] { "https://graph.microsoft.com/User.Read" };
             try {
                 var result = await cca.AcquireTokenInteractive(scopes).ExecuteAsync();
               
                     new JanelaPrincipal().Show();
-                Properties.Settings.Default.Nome = result.Account.Username;
+
+                Properties.Settings.Default.Nome = Properties.Settings.Default.Nome??result.Account.Username;
                 Properties.Settings.Default.token = result.AccessToken;
                 Properties.Settings.Default.Save();
                 usuario = new User(result.Account.Username,result.AccessToken);

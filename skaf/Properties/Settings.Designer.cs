@@ -49,10 +49,10 @@ namespace skaf.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public byte imagem {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string imagem {
             get {
-                return ((byte)(this["imagem"]));
+                return ((string)(this["imagem"]));
             }
             set {
                 this["imagem"] = value;
@@ -77,6 +77,30 @@ namespace skaf.Properties {
             }
             set {
                 this["Email"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string fone {
+            get {
+                return ((string)(this["fone"]));
+            }
+            set {
+                this["fone"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string linkedin {
+            get {
+                return ((string)(this["linkedin"]));
+            }
+            set {
+                this["linkedin"] = value;
             }
         }
     }

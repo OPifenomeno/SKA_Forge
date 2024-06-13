@@ -13,6 +13,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Mail;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,11 +36,10 @@ namespace skaf
        public string[] _emails = new string[99]; 
        public List<TextBox> _emailsList = new();
         protected string nomeA;
-        
-       
-        public EmailGroupBox(string ?nome)
+        public JanelaPrincipal pai;
+        public EmailGroupBox(string ?nome,JanelaPrincipal pail)
         {
-         
+            pai = pail;
             InitializeComponent();
             if (nome != null)
             {
@@ -63,7 +63,7 @@ namespace skaf
                 Background = Brushes.Transparent,
                 Foreground = Brushes.Black,
                 TextAlignment = TextAlignment.Center,
-                
+                BorderThickness = new Thickness(0,1,0,1)
            };
             ContextMenu menu = new ContextMenu();
             MenuItem limpar = new MenuItem() { Header = "Limpar" };
@@ -118,12 +118,12 @@ namespace skaf
             DestBlock.Children.Add(novoEmail);
         }
 
-        private void SendButton_Click(object sender, RoutedEventArgs e)
+        private async void SendButton_Click(object sender, RoutedEventArgs e)
         {
     
             foreach (TextBox i in DestBlock.Children)
             {
-                EnviarEmail(i.Text);
+               await EnviarEmail(i.Text);
 
             }
         }
@@ -179,116 +179,163 @@ namespace skaf
             return attachs;
             
         }
-      
-        
-        
-        
-        
-        private void EnviarEmail(string para){
 
-        string conteudomsg(string texto) {
-                texto = texto.Replace(LerCaminhoAnexo(texto) +";", "") ;
 
-                if (texto.Contains("Attachment: ")){
+
+
+
+
+        private async Task EnviarEmail(string para)
+        {
+            List<object> requests = new List<object>();
+            var batchRequestContent = new BatchRequestContentCollection(LoginScreen.graphClient);
+            string conteudomsg(string texto)
+            {
+                texto = texto.Replace(LerCaminhoAnexo(texto) + ";", "");
+
+                if (texto.Contains("Attachment: "))
+                {
                     return conteudomsg(texto);
                 }
-                else {
+                else
+                {
                     return texto;
                 }
             }
-           
+
             string[] nome = [];
-            List<byte[]> attachments = new List<byte[]>();   
+            List<byte[]> attachments = new List<byte[]>();
             List<object> attachFinal = new List<object>();
-                DirectoryInfo inf = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", ModelName.Text));
+            DirectoryInfo inf = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", ModelName.Text));
             if (!inf.Exists || inf.GetFiles().Length == 0) { MessageBox.Show("Confira o diretório."); }
             else
             {
 
-                inf.GetFiles().ToList().ForEach(async f =>
-                {
-                string conteudo = File.ReadAllText(f.FullName) + "\n" + (LoginScreen.usuario.Assinatura != null ? LoginScreen.usuario.Assinatura : null);
 
-                
-                        attachments = ConferirAttachs(conteudo);
-                                        
-                    
+                foreach (var f in inf.GetFiles()) 
+                {
+                    string conteudo = File.ReadAllText(f.FullName) + "\n" + (LoginScreen.usuario.Assinatura != null ? LoginScreen.usuario.Assinatura : null);
+
+
+                    attachments = ConferirAttachs(conteudo);
+
+
 
                     foreach (byte[] att in attachments)
                     {
                         string caminho = LerCaminhoAnexo(conteudo);
 
                         attachFinal.Add(new Dictionary<string, object>
-        {
-            { "@odata.type", "#microsoft.graph.fileAttachment" },
-            { "name", System.IO.Path.GetFileName(LerCaminhoAnexo(caminho)).Replace(";","") },
-            { "contentBytes", Convert.ToBase64String(att) }
-        });
-                        conteudo = conteudo.Replace(caminho,"");
-                        
+                        {
+                            { "@odata.type", "#microsoft.graph.fileAttachment" },
+                            { "name", System.IO.Path.GetFileName(LerCaminhoAnexo(caminho)).Replace(";", "") },
+                            { "contentBytes", Convert.ToBase64String(att) }
+                        });
+                        conteudo = conteudo.Replace(caminho, "");
+
                     }
 
 
-                    var jsonBody = JsonConvert.SerializeObject(new
+                    var emailRequest = new
                     {
-                        message = new
+                        id = Guid.NewGuid().ToString(), // ID único para esta operação de e-mail
+                        method = "POST",
+                        url = "/me/sendMail",
+                        headers = new Dictionary<string, string>
                         {
-                            subject = f.Name.Replace(".txt", " "),
-                            body = new
-                            {
-                                contentType = "html",
-                                content = conteudomsg(conteudo),
-                            },
-                            toRecipients = new[] {
-
-                                new {
-                                    emailAddress = new {
-                                        address = para
-                                    }
-                                }
-                            },
-                            attachments = attachFinal.ToArray()
-
-                        }
-                    });
-
-
-                    
-                        using (var client = new HttpClient())
+                           { "Content-Type" ,"application/json"}
+                        },
+                        body = new
                         {
-                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Properties.Settings.Default.token);
-                            var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
-
-                            var response = await client.PostAsync("https://graph.microsoft.com/v1.0/me/sendMail", content);
-
-                            if (response.IsSuccessStatusCode)
+                            message = new
                             {
-                                MessageBox.Show("Operação concluída!");
-
-                            }
-                            else
-                            {
-                                var responseR = await response.Content.ReadAsStringAsync();
-                                MessageBox.Show($"Erro ao enviar e-mail: {response.StatusCode},{responseR}");
-
-                            }
-
-
+                                subject = f.Name.Replace(".txt", " ").Replace(".html", " "),
+                                body = new
+                                {
+                                    contentType = "html",
+                                    content = conteudomsg(conteudo)
+                                },
+                                toRecipients = new[]
+              {
+                    new
+                    {
+                        emailAddress = new
+                        {
+                            address = para
                         }
-                    
+                    }
+                },
+                                attachments = attachFinal.ToArray()
+                            }
+                        }
+                    };
+
                    
+                
+                   requests.Add(emailRequest);
+
+                };
 
 
-                });
+                var batchRequest = new { requests = requests.ToArray() };
+
+
+                var jsonbody = JsonConvert.SerializeObject(batchRequest);
+                var batchContent = new StringContent(jsonbody,Encoding.UTF8,"application/json");
+
+                using (var client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Properties.Settings.Default.token);
+
+                    var response = await client.PostAsync("https://graph.microsoft.com/v1.0/$batch", batchContent);
+                    Clipboard.SetText(response.Content.ToString());
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Emails enviados com sucesso.");
+                    }
+                    else
+                    {
+                        var responseR = await response.Content.ReadAsStringAsync();
+
+                        MessageBox.Show($"Erro ao enviar e-mails: {response.StatusCode}, {responseR}");
+                    }
+                }
+
+
+
+
+
 
             }
-           
 
+        MessageBox.Show("Processo finalizado!");
 
 
 
 
         }
+
+        private void MenuzitoE(object sender, MouseButtonEventArgs e)
+        {
+            ContextMenu menu = new ContextMenu();
+
+            MenuItem limpar = new MenuItem() { Header = "Excluir modelo" };
+            limpar.Click += (s, e) => {
+                pai.conteiner.Children.Remove(this);
+                try
+                {
+                DirectoryInfo dir = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails",ModelName.Text)) ;
+                dir.Delete(true);
+                }catch (Exception ex) { MessageBox.Show("Falha ao excluir modelo." + ex.Message) ; }
+                
+
+            };
+            menu.Items.Add(limpar);
+           panelAll.ContextMenu = menu;
+
+
+        }
+
         private void Menuzito(object sender, MouseButtonEventArgs e)
         {
             ContextMenu menu = new ContextMenu();

@@ -8,13 +8,19 @@
     <Setting Name="token" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="imagem" Type="System.Byte" Scope="User">
-      <Value Profile="(Default)">0</Value>
+    <Setting Name="imagem" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="primeiroLogin" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Email" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="fone" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="linkedin" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

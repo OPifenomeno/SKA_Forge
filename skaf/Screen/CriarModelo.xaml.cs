@@ -102,7 +102,7 @@ namespace skaf
                 }
               
 
-                EmailGroupBox gp = new EmailGroupBox(TextBoxFile.Text);
+                EmailGroupBox gp = new EmailGroupBox(TextBoxFile.Text,principal);
                 principal.conteiner.Children.Add(gp);
                 gp.HorizontalAlignment = HorizontalAlignment.Stretch;
                 DockPanel.SetDock(gp, Dock.Top);

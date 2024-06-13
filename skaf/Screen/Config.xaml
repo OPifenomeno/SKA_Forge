@@ -1,0 +1,22 @@
+﻿<Window x:Class="skaf.Screen.Config"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:skaf.Screen"
+        mc:Ignorable="d"
+        Title="Config" Height="270" Width="800">
+    <Grid Margin="0,0,0,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="479*"/>
+            <ColumnDefinition Width="321*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="NomeBox" HorizontalAlignment="Left" Margin="201,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="201,91,0,0" TextWrapping="Wrap" Text="Pessoas &amp; Cultura" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="LinkedinBox" HorizontalAlignment="Left" Margin="201,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="FoneBox" HorizontalAlignment="Left" Margin="201,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
+        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="32,48,0,0" VerticalAlignment="Top" Width="143" Stretch="Fill" Source="/Screen/alek2.png"/>
+        <Button Grid.Column="1" Content="confirmar" HorizontalAlignment="Right" Margin="0,0,24,10" Width="216" Height="20" VerticalAlignment="Bottom" Click="submit"/>
+
+    </Grid>
+</Window>

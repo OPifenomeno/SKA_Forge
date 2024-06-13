@@ -75,12 +75,17 @@ namespace skaf.Screen
 
         private void criarEmail(object sender, RoutedEventArgs e)
         {
+            
             try
             {
+
                 File.Create(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", gpM.ModelName.Text, $"Email_{dir.GetFiles().Length}.txt"));
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+
             LoadModel();
+
         }
 
         private void SalvarModel(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿
+using skaf.Screen;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,18 +15,25 @@ namespace skaf
     public partial class JanelaPrincipal : Window
     {
         public JanelaPrincipal()
+
         {
+           
             InitializeComponent();
+           
             carregarModelos();
         }
          void carregarModelos() {
-                    DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));
+
+           
+
+
+            DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));
             if (past.Exists)
             {
                 past.GetDirectories().ToList().ForEach(dir =>
                 {
                     if (dir.Name != "Anexos") { 
-                    EmailGroupBox gp = new EmailGroupBox(dir.Name);
+                    EmailGroupBox gp = new EmailGroupBox(dir.Name, this);
                     Canvas.SetZIndex(gp, 4);
                     DockPanel.SetDock(gp, Dock.Top);
                     conteiner.Children.Add(gp);
@@ -93,6 +101,10 @@ namespace skaf
             }
         }
 
-      
+        private void MostrarPerfil(object sender, RoutedEventArgs e)
+        {
+            Screen.Config conf = new();
+            conf.Show();
+        }
     }
 }

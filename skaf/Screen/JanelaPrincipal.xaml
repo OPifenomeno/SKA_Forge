@@ -54,11 +54,11 @@
                         </TransformGroup>
                     </UIElement.RenderTransform>
                     <Grid Height="89">
-                        <Image HorizontalAlignment="Left" Margin="21,10,0,13" Width="68" Source="/Screen/user.png"/>
+                        <Image HorizontalAlignment="Left" Margin="21,10,0,13" Width="68" Source="/res/user.png"/>
                         <Label x:Name="userName" Content="Configurações&#xD;&#xA;" Margin="97,24,30,22" FontSize="20"/>
                     </Grid>
                     <Button Content="Perfil
-                            " Height="64" BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False">
+                            "  Height="64" BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Click="MostrarPerfil">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Grid>

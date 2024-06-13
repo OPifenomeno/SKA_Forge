@@ -72,8 +72,7 @@ namespace skaf
         {
             //dados de debug
             Fone = "(51) 3591-2900";
-            Name = "Emanuel Faleiro Carvalho Junior";
-            Linkedin = "https://br.linkedin.com/in/emanuel-faleiro-carvalho-junior-2464a821a\r\n\r\n";
+            Name = nome;
             Token = token;
         }
     }
