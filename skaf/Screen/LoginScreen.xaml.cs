@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Identity.Client.NativeInterop;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default;
+using Squirrel;
 namespace skaf
 {
     /// <summary>
@@ -18,6 +19,7 @@ namespace skaf
     /// </summary>
     public partial class LoginScreen : Window
     {
+        UpdateManager manager;
 
         public  static User ?usuario;
         public static GraphServiceClient graphClient;
@@ -25,10 +27,32 @@ namespace skaf
         {
             InitializeComponent();
         }
+        private async void Atualizar()
+        {
+            await manager.UpdateApp();
+        }
+
+        private async void VerificarAtualizacoes()
+        {
+            manager = await UpdateManager.GitHubUpdateManager(@"https://github.com/OPifenomeno/SKA_Forge");
+
+
+            var updInfo = await manager.CheckForUpdate();
+            if(updInfo.ReleasesToApply.Count > 0)
+            {
+               MessageBoxResult result = System.Windows.MessageBox.Show("Há atualizações disponíveis. Deseja aplicá-las?","Atualização Disponível",MessageBoxButton.YesNo,MessageBoxImage.None,MessageBoxResult.No);
+                if (result == MessageBoxResult.Yes) {
+                    Atualizar();
+                
+                }
+            
+            }
+        
+        }
 
         private void Load(object sender, RoutedEventArgs e)
         {
-            
+            VerificarAtualizacoes();
             ska_logo.BeginAnimation(OpacityProperty, new DoubleAnimation()
             {
                 From = 0,
@@ -129,7 +153,7 @@ namespace skaf
             var scopes = new[] { "https://graph.microsoft.com/User.Read" };
             
             try { var result = await cca.AcquireTokenSilent(scopes,"famigerado").ExecuteAsync();
-                MessageBox.Show("token"+result.AccessToken);
+                
             
             
             } catch (Exception) { await Login(); }
@@ -176,7 +200,7 @@ namespace skaf
                 }
                 else
                 {
-                    MessageBox.Show("Falha ao executar Login!: \n" + ex.Message);
+                    System.Windows.MessageBox.Show("Falha ao executar Login!: \n" + ex.Message);
                 }
                 
             }
