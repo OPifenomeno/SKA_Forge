@@ -72,28 +72,14 @@ namespace skaf.Screen
                 var v = Properties.Settings.Default;
 
                 if (ImageBox.Source != null) {
-                    BitmapImage? bitmapImage = ImageBox.Source as BitmapImage;
-
-                    // Converter BitmapImage para byte[]
-                    byte[] data;
-                    JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-                    encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        encoder.Save(ms);
-                        data = ms.ToArray();
-                    }
-
-                    // Converter byte[] para string Base64
-                    string stringBytes = Convert.ToBase64String(data);
-                    v.imagem = stringBytes;
+                   
                 }
-
-          
-           
-            v.Nome = NomeBox.Text;
-            v.linkedin = LinkedinBox.Text;
-            v.Save(); } catch(Exception es){ MessageBox.Show(es.Message + es.StackTrace); }
+                LoginScreen.usuario.Name = NomeBox.Text;
+                LoginScreen.usuario.Linkedin = LinkedinBox.Text;
+                
+                v.Nome = NomeBox.Text;
+                v.linkedin = LinkedinBox.Text;
+                v.Save(); } catch(Exception es){ MessageBox.Show(es.Message + es.StackTrace); }
            
         }
 

@@ -1,5 +1,6 @@
 ﻿using Azure.Core;
 using Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Definition;
+using skaf.Properties;
 using System;
 using System.Drawing;
 using System.IO;
@@ -56,7 +57,16 @@ namespace skaf
             }
         }
 
-        public string Name { get; set; }
+        public string Name {
+            get
+            {
+                if (!string.IsNullOrEmpty(Properties.Settings.Default.Nome))
+                {
+                    return Properties.Settings.Default.Nome;
+                }
+
+                else { return Name; }
+            } set { } }
         public string Token { get; set; }
         public string ?Fone { get; set; }
         public string ?Linkedin { get; set; }

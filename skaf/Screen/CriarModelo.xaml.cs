@@ -64,23 +64,16 @@ namespace skaf
                 {
                     break;
                 }
-                else {
-                    using (StreamReader reader = new(path[i]))
-                    {
-                        
-                        string conteudo = reader.ReadToEnd();
-                        using (StreamWriter writer = new StreamWriter(System.IO.Path.Combine(caminhoModelo, $"Email_{i + 1}.txt")))
-                        {
-                            
-                            writer.WriteLine(conteudo);
-                            writer.Flush();
+                else
+                {
+                   
 
+                    File.Copy(path[i], System.IO.Path.Combine(caminhoModelo, $"Email_{i + 1}.txt"), true);
+                    
 
-                        }
-                    }
                 }
 
-             
+
             }
 
            
