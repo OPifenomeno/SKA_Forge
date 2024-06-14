@@ -26,10 +26,13 @@ namespace skaf
         public LoginScreen()
         {
             InitializeComponent();
+            VerificarAtualizacoes();
         }
         private async void Atualizar()
         {
             await manager.UpdateApp();
+            MessageBox.Show("Reinicie o app!");
+            this.Close();
         }
 
         private async void VerificarAtualizacoes()
@@ -43,7 +46,7 @@ namespace skaf
                MessageBoxResult result = System.Windows.MessageBox.Show("Há atualizações disponíveis. Deseja aplicá-las?","Atualização Disponível",MessageBoxButton.YesNo,MessageBoxImage.None,MessageBoxResult.No);
                 if (result == MessageBoxResult.Yes) {
                     Atualizar();
-                
+                    
                 }
             
             }
@@ -52,7 +55,7 @@ namespace skaf
 
         private void Load(object sender, RoutedEventArgs e)
         {
-            VerificarAtualizacoes();
+           
             ska_logo.BeginAnimation(OpacityProperty, new DoubleAnimation()
             {
                 From = 0,

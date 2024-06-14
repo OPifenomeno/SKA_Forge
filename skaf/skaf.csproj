@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="skamail.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.11.3" />
     <PackageReference Include="Identity.Client" Version="1.0.0" />
     <PackageReference Include="Microsoft.Graph" Version="5.49.0" />
@@ -62,9 +66,11 @@
 		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
 		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
 
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 
 		<NuspecFile>$(SolutionDir)skaf\ReleaseSpec.nuspec</NuspecFile>
+
+		<ApplicationIcon>skamail.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<Target Name="GenerateRelease" AfterTargets="AfterBuild" Condition="$(Configuration) == Release">
