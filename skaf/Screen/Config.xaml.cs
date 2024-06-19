@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Image = System.Windows.Controls.Image;
+using NuGet;
+
+
 
 namespace skaf.Screen
 {
@@ -85,7 +88,20 @@ namespace skaf.Screen
 
         private void MudarFotoClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Em breve");
+            var dialog = new Microsoft.Win32.OpenFileDialog();
+            
+            dialog.Filter = "Png images (.png)|*.png";
+            bool? result = dialog.ShowDialog();
+            if (result == true)
+            {
+                byte[] arq = File.ReadAllBytes(dialog.FileName);
+                string base64 = Convert.ToBase64String(arq);
+                Properties.Settings.Default.imagem = base64;
+
+
+            }
         }
+
+       
     }
 }

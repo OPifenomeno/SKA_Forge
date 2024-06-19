@@ -4,49 +4,50 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:skaf.Screen"
+        WindowState="Normal" WindowStyle="SingleBorderWindow"
+        IsManipulationEnabled="False"
         mc:Ignorable="d"
-        Title="Config" Height="270" Width="800">
+        Title="Config" Height="270" Width="800" ResizeMode="NoResize" Icon="/Screen/alek2.png">
     <Grid Margin="0,0,0,1">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="479*"/>
-            <ColumnDefinition Width="321*"/>
-        </Grid.ColumnDefinitions>
+
         <Ellipse HorizontalAlignment="Left" Height="336" Margin="-86,0,0,0" VerticalAlignment="Center" Width="282" Fill="#FF18577B"/>
 
         <TextBox x:Name="NomeBox" HorizontalAlignment="Left" Margin="201,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Margin="201,91,0,0" TextWrapping="Wrap" Text="Pessoas &amp; Cultura" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
         <TextBox x:Name="LinkedinBox" HorizontalAlignment="Left" Margin="201,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
         <TextBox x:Name="FoneBox" HorizontalAlignment="Left" Margin="201,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
-        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="10,48,0,0" VerticalAlignment="Top" Width="143" Stretch="Fill" Source="/res/user.png" OpacityMask="White">
+        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="10,48,0,0" VerticalAlignment="Top" Width="143" Stretch="Fill" Source="/res/user.png" OpacityMask="White" MouseDown="MudarFoto">
             <Image.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
             </Image.Effect>
         </Image>
         <Button Grid.Column="1" Content="confirmar" HorizontalAlignment="Right" Margin="0,0,24,10" Width="216" Height="20" VerticalAlignment="Bottom" Click="submit"/>
-        <Button Margin="26,220,360,6" Background="{x:Null}" Foreground="#FFFDFDFD" BorderBrush="{x:Null}" Click="MudarFotoClick">
+        <Button Margin="10,193,638,0" Background="{x:Null}" Foreground="#FFFDFDFD" BorderBrush="{x:Null}" Click="MudarFotoClick" Height="31" VerticalAlignment="Top">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Setters >
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="Button">
-                                    <ContentPresenter>
-                                        <ContentPresenter>
-                                            <Border>
-                                                <StackPanel Orientation="Horizontal" Margin="0,0,-8,0">
-                                                    <Image Source="/res/edit.png" HorizontalAlignment="Left"/>
-                                                    <Label Content="Mudar foto" Margin="0,0,18,0"/>
-                                                </StackPanel>
-                                            </Border>
-                                        </ContentPresenter>
-                                    </ContentPresenter>
+                                    <Border Margin="0,0,7,0">
+                                        <ContentPresenter/>
+                                    </Border>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                     </Style.Setters>
                 </Style>
             </Button.Style>
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/res/edit.png" HorizontalAlignment="Left" Stretch="Fill"/>
+                    <Label VerticalAlignment="Center" Content="Mudar foto" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="18" Foreground="White"/>
+                </StackPanel>
+
+
+            </Button.Content>
         </Button>
+        <Label Content="Preencha com nome, fone e linkedin." HorizontalAlignment="Left" Height="24" Margin="245,223,0,0" VerticalAlignment="Top" Width="213"/>
 
     </Grid>
 </Window>

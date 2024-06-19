@@ -23,7 +23,7 @@ namespace skaf
             InitializeComponent();
            
             carregarModelos();
-           try { VerificarAtt(); } catch (Exception es){ MessageBox.Show(es.Message); }
+          // try { VerificarAtt(); } catch (Exception es){ MessageBox.Show(es.Message); }
         }
 
         private async void Atualizar()
@@ -108,9 +108,18 @@ namespace skaf
 
         
 
-        public void AbrirMenu(object sender, MouseButtonEventArgs e)
+        
+
+        private void MostrarPerfil(object sender, RoutedEventArgs e)
         {
-            if(LoginScreen.usuario != null) {
+            Screen.Config conf = new();
+            conf.Show();
+        }
+
+        private void AbrirMenu(object sender, RoutedEventArgs e)
+        {
+            if (LoginScreen.usuario != null)
+            {
                 userName.Content = LoginScreen.usuario.Name;
             }
             if (MenuBar.Width != MenuBar.MaxWidth)
@@ -120,26 +129,21 @@ namespace skaf
                     From = 0,
                     To = MenuBar.MaxWidth,
                     Duration = TimeSpan.FromSeconds(1),
-                    EasingFunction = new QuadraticEase() {EasingMode=EasingMode.EaseInOut}
-                    
-                });
-                
-            }
-            else {
-            MenuBar.BeginAnimation(WidthProperty, new DoubleAnimation
-            {
-                From = MenuBar.MaxWidth,
-                To = 0,
-                Duration = TimeSpan.FromSeconds(1),
-                EasingFunction = new QuadraticEase() { EasingMode = EasingMode.EaseInOut }
-            });
-            }
-        }
+                    EasingFunction = new QuadraticEase() { EasingMode = EasingMode.EaseInOut }
 
-        private void MostrarPerfil(object sender, RoutedEventArgs e)
-        {
-            Screen.Config conf = new();
-            conf.Show();
+                });
+
+            }
+            else
+            {
+                MenuBar.BeginAnimation(WidthProperty, new DoubleAnimation
+                {
+                    From = MenuBar.MaxWidth,
+                    To = 0,
+                    Duration = TimeSpan.FromSeconds(1),
+                    EasingFunction = new QuadraticEase() { EasingMode = EasingMode.EaseInOut }
+                });
+            }
         }
     }
 }

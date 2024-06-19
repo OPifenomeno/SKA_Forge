@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="res\Apresentação1.mp4" />
+    <None Remove="res\edit.png" />
+    <None Remove="res\eng.png" />
     <None Remove="res\Logo_SKA_Azul.png" />
     <None Remove="res\Microsoft_logo.png" />
     <None Remove="Screen\alek2.png" />
@@ -17,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="res\edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="skamail.ico" />
   </ItemGroup>
 
@@ -33,6 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="res\eng.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="res\Logo_SKA_Azul.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
