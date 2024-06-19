@@ -1,5 +1,6 @@
 ﻿
 using skaf.Screen;
+using Squirrel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,7 @@ namespace skaf
     /// </summary>
     public partial class JanelaPrincipal : Window
     {
+        UpdateManager manager;
         public JanelaPrincipal()
 
         {
@@ -21,12 +23,44 @@ namespace skaf
             InitializeComponent();
            
             carregarModelos();
+           try { VerificarAtt(); } catch (Exception es){ MessageBox.Show(es.Message); }
         }
-         void carregarModelos() {
 
-           
+        private async void Atualizar()
+        {
+            
+            await manager.UpdateApp();
+            MessageBox.Show("Reinicie o app!");
+            this.Close();
+        }
+
+        private async void VerificarAtt()
+        {
+            manager = await UpdateManager.GitHubUpdateManager(@"https://github.com/OPifenomeno/SKA_Forge");
 
 
+            var updInfo = await manager.CheckForUpdate();
+            if (updInfo.ReleasesToApply.Count > 0)
+            {
+                MessageBoxResult result = System.Windows.MessageBox.Show("Há atualizações disponíveis. Deseja aplicá-las?", "Atualização Disponível", MessageBoxButton.YesNo, MessageBoxImage.None, MessageBoxResult.No);
+                if (result == MessageBoxResult.Yes)
+                {
+
+                    Atualizar();
+
+                }
+
+
+            }
+        }
+
+
+
+
+
+
+        void carregarModelos() {
+            conteiner.Children.Clear();
             DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));
             if (past.Exists)
             {
@@ -39,6 +73,7 @@ namespace skaf
                     conteiner.Children.Add(gp);
                     }
                 });
+
             }
             else {
                 past.Create();

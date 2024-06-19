@@ -11,12 +11,42 @@
             <ColumnDefinition Width="479*"/>
             <ColumnDefinition Width="321*"/>
         </Grid.ColumnDefinitions>
+        <Ellipse HorizontalAlignment="Left" Height="336" Margin="-86,0,0,0" VerticalAlignment="Center" Width="282" Fill="#FF18577B"/>
+
         <TextBox x:Name="NomeBox" HorizontalAlignment="Left" Margin="201,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Margin="201,91,0,0" TextWrapping="Wrap" Text="Pessoas &amp; Cultura" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
         <TextBox x:Name="LinkedinBox" HorizontalAlignment="Left" Margin="201,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
         <TextBox x:Name="FoneBox" HorizontalAlignment="Left" Margin="201,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
-        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="32,48,0,0" VerticalAlignment="Top" Width="143" Stretch="Fill" Source="/Screen/alek2.png"/>
+        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="10,48,0,0" VerticalAlignment="Top" Width="143" Stretch="Fill" Source="/res/user.png" OpacityMask="White">
+            <Image.Effect>
+                <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
+            </Image.Effect>
+        </Image>
         <Button Grid.Column="1" Content="confirmar" HorizontalAlignment="Right" Margin="0,0,24,10" Width="216" Height="20" VerticalAlignment="Bottom" Click="submit"/>
+        <Button Margin="26,220,360,6" Background="{x:Null}" Foreground="#FFFDFDFD" BorderBrush="{x:Null}" Click="MudarFotoClick">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Setters >
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <ContentPresenter>
+                                        <ContentPresenter>
+                                            <Border>
+                                                <StackPanel Orientation="Horizontal" Margin="0,0,-8,0">
+                                                    <Image Source="/res/edit.png" HorizontalAlignment="Left"/>
+                                                    <Label Content="Mudar foto" Margin="0,0,18,0"/>
+                                                </StackPanel>
+                                            </Border>
+                                        </ContentPresenter>
+                                    </ContentPresenter>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style.Setters>
+                </Style>
+            </Button.Style>
+        </Button>
 
     </Grid>
 </Window>

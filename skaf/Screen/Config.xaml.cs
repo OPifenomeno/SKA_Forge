@@ -83,6 +83,9 @@ namespace skaf.Screen
            
         }
 
-
+        private void MudarFotoClick(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Em breve");
+        }
     }
 }

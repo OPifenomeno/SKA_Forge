@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:skaf"
         mc:Ignorable="d"
-        Title="JanelaPrincipal" Height="450" Width="798" WindowStyle="None" AllowsTransparency="True" Background="Transparent" >
+        Title="Ska Mail" Height="450" Width="798" WindowStyle="None" AllowsTransparency="True" Background="Transparent" >
     <Grid Margin="0" Background="White">
         <DockPanel LastChildFill="False">
             <Grid DockPanel.Dock="Top" Height="38" Background="#FF0767B7" MouseLeftButtonDown="drag">
@@ -15,7 +15,7 @@
                     </Rectangle.OpacityMask>
 
                 </Rectangle>
-                <Rectangle MouseLeftButtonDown="Rectangle_MouseLeftButtonDown" Height="32" Margin="731,0,28,0" VerticalAlignment="Center" RadiusX="13.5" RadiusY="13.5" Fill="#FF16324A">
+                <Rectangle MouseLeftButtonDown="Rectangle_MouseLeftButtonDown" Height="32" Margin="749,0,10,0" VerticalAlignment="Center" RadiusX="13.5" RadiusY="13.5" Fill="#FF16324A">
                     <Rectangle.Style>
                         <Style TargetType="Rectangle">
                             <Setter Property="Cursor" Value="Arrow"/>
@@ -27,24 +27,37 @@
                         </Style>
                     </Rectangle.Style>
                 </Rectangle>
-                <Rectangle MouseLeftButtonDown="AbrirMenu" Height="32" Margin="677,0,82,0" VerticalAlignment="Center" RadiusX="13.5" RadiusY="13.5" Fill="#FF16324A">
-                    <Rectangle.Style>
-                        <Style TargetType="{x:Type Rectangle}">
-                            <Setter Property="Cursor" Value="Arrow"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Cursor" Value="Hand"/>
-                                </Trigger>
-                            </Style.Triggers>
+                <Button MouseLeftButtonDown="AbrirMenu" Height="32" Margin="705,0,54,0" VerticalAlignment="Center">
+                    <Button.Style >
+                        <Style TargetType="Button">
+                            <Style.Setters>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border CornerRadius="13.5" Background="#FF0767B7">
+                                                <ContentPresenter  >
+                                                    <ContentPresenter.Content>
+                                                        <Image Source="/res/eng.png" Margin="1,0,1,0" ></Image>
+                                                    </ContentPresenter.Content>
+                                                </ContentPresenter>
+                                            </Border>
+
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style.Setters>
                         </Style>
-                    </Rectangle.Style>
-                </Rectangle>
+                    </Button.Style>
+
+
+                </Button>
 
 
             </Grid>
             <Grid Width="799">
 
-                <StackPanel Panel.ZIndex="5" x:Name="MenuBar" HorizontalAlignment="Left" Margin="0,0,0,-1" Background="#FF055486" MaxWidth="295" Width="0" >
+                <StackPanel Panel.ZIndex="5" x:Name="MenuBar" HorizontalAlignment="Left" Margin="0,0,0,-1" Background="#FF055486" MaxWidth="295" Width="0
+                            " >
                     <UIElement.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="1"/>
@@ -55,7 +68,7 @@
                     </UIElement.RenderTransform>
                     <Grid Height="89">
                         <Image HorizontalAlignment="Left" Margin="21,10,0,13" Width="68" Source="/res/user.png"/>
-                        <Label x:Name="userName" Content="Configurações&#xD;&#xA;" Margin="97,24,30,22" FontSize="20"/>
+                        <Label x:Name="userName" Content="Configurações&#xD;&#xA;" Margin="97,24,30,22" FontSize="20" Foreground="White"/>
                     </Grid>
                     <Button Content="Perfil
                             "  Height="64" BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Click="MostrarPerfil">

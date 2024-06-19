@@ -19,7 +19,7 @@ namespace skaf
     /// </summary>
     public partial class LoginScreen : Window
     {
-        UpdateManager manager;
+       
 
         public  static User ?usuario;
         public static GraphServiceClient graphClient;
@@ -28,35 +28,35 @@ namespace skaf
             InitializeComponent();
            
         }
-        private async void Atualizar()
-        {
-            await manager.UpdateApp();
-            MessageBox.Show("Reinicie o app!");
-            this.Close();
-        }
+        //private async void Atualizar()
+        //{
+        //    await manager.UpdateApp();
+        //    MessageBox.Show("Reinicie o app!");
+        //    this.Close();
+        //}
 
-        private async void VerificarAtualizacoes()
-        {
-            manager = await UpdateManager.GitHubUpdateManager(@"https://github.com/OPifenomeno/SKA_Forge");
+        //private async void VerificarAtualizacoes()
+        //{
+        //    manager = await UpdateManager.GitHubUpdateManager(@"https://github.com/OPifenomeno/SKA_Forge");
 
 
-            var updInfo = await manager.CheckForUpdate();
-            if(updInfo.ReleasesToApply.Count > 0)
-            {
-               MessageBoxResult result = System.Windows.MessageBox.Show("Há atualizações disponíveis. Deseja aplicá-las?","Atualização Disponível",MessageBoxButton.YesNo,MessageBoxImage.None,MessageBoxResult.No);
-                if (result == MessageBoxResult.Yes) {
+        //    var updInfo = await manager.CheckForUpdate();
+        //    if(updInfo.ReleasesToApply.Count > 0)
+        //    {
+        //       MessageBoxResult result = System.Windows.MessageBox.Show("Há atualizações disponíveis. Deseja aplicá-las?","Atualização Disponível",MessageBoxButton.YesNo,MessageBoxImage.None,MessageBoxResult.No);
+        //        if (result == MessageBoxResult.Yes) {
 
-                    Atualizar();
+        //            Atualizar();
                     
-                }
+        //        }
             
-            }
+        //    }
         
-        }
+        //}
 
         private void Load(object sender, RoutedEventArgs e)
         {
-            try { VerificarAtualizacoes(); } catch (Exception es){ MessageBox.Show(es.Message); }
+           // try { VerificarAtualizacoes(); } catch (Exception es){ MessageBox.Show(es.Message); }
            
             ska_logo.BeginAnimation(OpacityProperty, new DoubleAnimation()
             {

@@ -66,11 +66,13 @@
 		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
 		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
 
-		<Version>1.0.5</Version>
+		<Version>1.0.7</Version>
 
 		<NuspecFile>$(SolutionDir)skaf\ReleaseSpec.nuspec</NuspecFile>
 
 		<ApplicationIcon>skamail.ico</ApplicationIcon>
+
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 	</PropertyGroup>
 
 	<Target Name="GenerateRelease" AfterTargets="AfterBuild" Condition="$(Configuration) == Release">
