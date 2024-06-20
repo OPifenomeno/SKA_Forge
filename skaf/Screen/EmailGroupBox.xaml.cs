@@ -120,12 +120,15 @@ namespace skaf
 
         private async void SendButton_Click(object sender, RoutedEventArgs e)
         {
-    
+            SendButton.IsEnabled = false;
             foreach (TextBox i in DestBlock.Children)
             {
+
                await EnviarEmail(i.Text);
 
             }
+            SendButton.IsEnabled = true;
+            MessageBox.Show("Processo Finalizado");
         }
 
         private string LerCaminhoAnexo(string texto) {
@@ -291,13 +294,13 @@ namespace skaf
                     Clipboard.SetText(response.Content.ToString());
                     if (response.IsSuccessStatusCode)
                     {
-                        MessageBox.Show("Emails enviados com sucesso.");
+                        
                     }
                     else
                     {
                         var responseR = await response.Content.ReadAsStringAsync();
 
-                        MessageBox.Show($"Erro ao enviar e-mails: {response.StatusCode}, {responseR}");
+                        MessageBox.Show($"Erro ao enviar e-mails para: {para}\nMensagem de erro:{response.Content},{responseR}");
                     }
                 }
 
@@ -307,10 +310,6 @@ namespace skaf
 
 
             }
-
-        MessageBox.Show("Processo finalizado!");
-
-
 
 
         }

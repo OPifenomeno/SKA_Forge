@@ -58,8 +58,7 @@
             </Grid>
             <Grid Width="799">
 
-                <StackPanel Panel.ZIndex="5" x:Name="MenuBar" HorizontalAlignment="Left" Margin="0,0,0,-1" Background="#FF055486" MaxWidth="295" Width="0
-                            " >
+                <StackPanel Panel.ZIndex="5" x:Name="MenuBar" HorizontalAlignment="Left" Margin="0,0,0,-1" Background="#FF055486" MaxWidth="295" Width="0" >
                     <UIElement.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="1"/>
@@ -72,7 +71,7 @@
                         <Image HorizontalAlignment="Left" Margin="21,10,0,13" Width="68" Source="/res/user.png"/>
                         <Label x:Name="userName" Content="Configurações&#xD;&#xA;" Margin="97,24,30,22" FontSize="20" Foreground="White"/>
                     </Grid>
-                    <Button Content="Perfil
+                    <Button x:Name="btPerfil" Content="Perfil
                             "  Height="64" BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Click="MostrarPerfil">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
@@ -90,8 +89,8 @@
                         </Button.Template>
 
                     </Button>
-                    <Button Content="Sair
-                            " Height="70" BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False">
+                    <Button x:Name="btSair" Content="Sair
+                            " Height="70" BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Click="Sair">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Grid>
@@ -110,10 +109,18 @@
                     </Button>
 
                 </StackPanel>
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,59">
-                    <DockPanel x:Name="conteiner" LastChildFill="false" Margin="0,0,0,59">
 
-                    </DockPanel>
+                <Canvas Margin="0,0,0,59">
+                    <Ellipse Height="632" Canvas.Left="38" Stroke="#FF7992B3" Canvas.Top="-144" Width="768" HorizontalAlignment="Center" VerticalAlignment="Center" StrokeThickness="2"/>
+                    <Ellipse Height="385" Width="417" HorizontalAlignment="Left" Canvas.Left="519" Canvas.Top="10" VerticalAlignment="Top" Fill="#332080D8"/>
+                    <Ellipse Height="385" Width="416" HorizontalAlignment="Left" Canvas.Left="-211" Canvas.Top="-98" VerticalAlignment="Top" Fill="#332080D8"/>
+                    <Ellipse Height="385" Width="417" HorizontalAlignment="Left" Canvas.Left="-197" Canvas.Top="-156" VerticalAlignment="Top" Stroke="#FFE6BE02"/>
+                    <Ellipse Height="384" Width="417" Canvas.Left="558" Canvas.Top="104" Stroke="#FFE6BE02" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Content="Sua pasta de modelos está vazia. Crie um novo para começar!" Canvas.Left="220" Canvas.Top="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="343"/>
+
+                </Canvas>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,59" d:IsHidden="True">
+                    <DockPanel x:Name="conteiner" LastChildFill="false" Margin="0,0,0,0"/>
                 </ScrollViewer>
 
 

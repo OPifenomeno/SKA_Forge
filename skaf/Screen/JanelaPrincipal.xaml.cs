@@ -146,5 +146,13 @@ namespace skaf
                 });
             }
         }
+
+        private void Sair(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+
+
+
 }
