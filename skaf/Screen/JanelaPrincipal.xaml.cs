@@ -23,7 +23,7 @@ namespace skaf
             InitializeComponent();
            
             carregarModelos();
-          // try { VerificarAtt(); } catch (Exception es){ MessageBox.Show(es.Message); }
+           try { VerificarAtt(); } catch (Exception es){ MessageBox.Show(es.Message); }
         }
 
         private async void Atualizar()
