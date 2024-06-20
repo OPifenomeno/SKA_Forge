@@ -8,21 +8,15 @@
         IsManipulationEnabled="False"
         mc:Ignorable="d"
         Title="Config" Height="270" Width="800" ResizeMode="NoResize" Icon="/Screen/alek2.png">
-    <Grid Margin="0,0,0,1">
+    <Grid>
 
         <Ellipse HorizontalAlignment="Left" Height="336" Margin="-86,0,0,0" VerticalAlignment="Center" Width="282" Fill="#FF18577B"/>
-
-        <TextBox x:Name="NomeBox" HorizontalAlignment="Left" Margin="201,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Margin="201,91,0,0" TextWrapping="Wrap" Text="Pessoas &amp; Cultura" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="LinkedinBox" HorizontalAlignment="Left" Margin="201,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="FoneBox" HorizontalAlignment="Left" Margin="201,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
-        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="10,48,0,0" VerticalAlignment="Top" Width="143" Stretch="Fill" Source="/res/user.png" OpacityMask="White" MouseDown="MudarFoto">
+        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="10,48,0,0" VerticalAlignment="Top" Width="160" Stretch="Fill" Source="/res/user.png" OpacityMask="White">
             <Image.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
             </Image.Effect>
         </Image>
-        <Button Grid.Column="1" Content="confirmar" HorizontalAlignment="Right" Margin="0,0,24,10" Width="216" Height="20" VerticalAlignment="Bottom" Click="submit"/>
-        <Button Margin="10,193,638,0" Background="{x:Null}" Foreground="#FFFDFDFD" BorderBrush="{x:Null}" Click="MudarFotoClick" Height="31" VerticalAlignment="Top">
+        <Button Margin="26,192,0,0" Background="{x:Null}" Foreground="#FFFDFDFD" BorderBrush="{x:Null}" Click="MudarFotoClick" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130">
             <Button.Style>
                 <Style TargetType="Button">
                     <Style.Setters >
@@ -47,7 +41,38 @@
 
             </Button.Content>
         </Button>
-        <Label Content="Preencha com nome, fone e linkedin." HorizontalAlignment="Left" Height="24" Margin="245,223,0,0" VerticalAlignment="Top" Width="213"/>
+        <Label Content="Preencha com nome, fone e linkedin." HorizontalAlignment="Left" Margin="363,0,0,47" Width="213" Height="24" VerticalAlignment="Bottom"/>
+        <Canvas Margin="0,-3,0,0">
+            <Canvas Panel.ZIndex="-3" HorizontalAlignment="Center" Height="41" Canvas.Left="716" VerticalAlignment="Top" Width="60">
+                <Ellipse Height="8" Stroke="#FFFFC700" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="13" Stroke="#FFFFC700" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="39" Stroke="#FFFFC700" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="52" Stroke="#FFFFC700" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="26" Stroke="#FFFFC700" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Stroke="#FFFFC700" Canvas.Top="11" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="13" Stroke="#FFFFC700" Canvas.Top="11" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="39" Stroke="#FFFFC700" Canvas.Top="11" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="52" Stroke="#FFFFC700" Canvas.Top="11" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="26" Stroke="#FFFFC700" Canvas.Top="11" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Stroke="#FFFFC700" Canvas.Top="22" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="13" Stroke="#FFFFC700" Canvas.Top="22" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="39" Stroke="#FFFFC700" Canvas.Top="22" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="52" Stroke="#FFFFC700" Canvas.Top="22" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="26" Stroke="#FFFFC700" Canvas.Top="22" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="13" Stroke="#FFFFC700" Canvas.Top="33" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="39" Stroke="#FFFFC700" Canvas.Top="33" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Ellipse Height="8" Canvas.Left="26" Stroke="#FFFFC700" Canvas.Top="33" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            </Canvas>
+            <Ellipse StrokeThickness="2" Height="371" Canvas.Left="-145" Stroke="#FFFFC700" Width="372" Canvas.Top="-58" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Ellipse Height="338" Stroke="#FFFFC700" StrokeThickness="5" Width="301" HorizontalAlignment="Left" Canvas.Left="-101" Canvas.Top="-41" VerticalAlignment="Center"/>
+            <Label Content="Edite sua Assinatura!" Canvas.Left="380" Canvas.Top="14" HorizontalAlignment="Left" VerticalAlignment="Top" Width="196" FontSize="20"/>
+        </Canvas>
+        <TextBox x:Name="NomeBox" HorizontalAlignment="Left" Margin="201,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="201,91,0,0" TextWrapping="Wrap" Text="Pessoas &amp; Cultura" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="LinkedinBox" HorizontalAlignment="Left" Margin="201,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="FoneBox" HorizontalAlignment="Left" Margin="201,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
+        <Button Grid.Column="1" Content="confirmar" HorizontalAlignment="Right" Margin="0,0,24,10" Width="216" Height="20" VerticalAlignment="Bottom" Click="submit"/>
 
     </Grid>
 </Window>

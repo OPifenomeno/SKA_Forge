@@ -6,15 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Drawing;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Image = System.Windows.Controls.Image;
 using NuGet;
+
 
 
 
@@ -30,12 +29,13 @@ namespace skaf.Screen
           
             InitializeComponent();
             LoadBoxes();
+            
         }
    
 
 
         private void LoadBoxes() {
-
+            carregarFoto();
             if (Properties.Settings.Default.imagem != string.Empty) {
                 byte[] byt = Convert.FromBase64String(Properties.Settings.Default.imagem);
                 using (var ms = new MemoryStream(byt))
@@ -74,15 +74,13 @@ namespace skaf.Screen
             {
                 var v = Properties.Settings.Default;
 
-                if (ImageBox.Source != null) {
-                   
-                }
+               
                 LoginScreen.usuario.Name = NomeBox.Text;
-                LoginScreen.usuario.Linkedin = LinkedinBox.Text;
-                
+                LoginScreen.usuario.Linkedin = LinkedinBox.Text; 
                 v.Nome = NomeBox.Text;
                 v.linkedin = LinkedinBox.Text;
                 v.Save(); } catch(Exception es){ MessageBox.Show(es.Message + es.StackTrace); }
+            this.Close();
            
         }
 
@@ -90,15 +88,41 @@ namespace skaf.Screen
         {
             var dialog = new Microsoft.Win32.OpenFileDialog();
             
-            dialog.Filter = "Png images (.png)|*.png";
+            dialog.Filter = "Png images (.png)|*.png|jpg images (.jpeg)|*.jpg";
             bool? result = dialog.ShowDialog();
             if (result == true)
             {
                 byte[] arq = File.ReadAllBytes(dialog.FileName);
                 string base64 = Convert.ToBase64String(arq);
                 Properties.Settings.Default.imagem = base64;
+                Properties.Settings.Default.Save();
+              
+            }
+            carregarFoto();
+        }
 
+        private void carregarFoto()
+        {
+            if (!string.IsNullOrEmpty(Properties.Settings.Default.imagem))
+            {
+                byte[] img = Convert.FromBase64String(Properties.Settings.Default.imagem);
 
+                ImageBox.Source = byteArrayToImage(img) ;
+
+            }
+
+            
+        }
+        public BitmapImage byteArrayToImage(byte[] img)
+        {
+            using (var ms = new MemoryStream(img))
+            {
+                var bitmap = new BitmapImage();
+                bitmap.BeginInit();
+                bitmap.StreamSource = ms;
+                bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                bitmap.EndInit();
+                return bitmap;
             }
         }
 
