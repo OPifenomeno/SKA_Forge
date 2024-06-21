@@ -42,7 +42,7 @@
             </Button.Content>
         </Button>
         <Label Content="Preencha com nome, fone e linkedin." HorizontalAlignment="Left" Margin="363,0,0,47" Width="213" Height="24" VerticalAlignment="Bottom"/>
-        <Canvas Margin="0,-3,0,0">
+        <Canvas>
             <Canvas Panel.ZIndex="-3" HorizontalAlignment="Center" Height="41" Canvas.Left="716" VerticalAlignment="Top" Width="60">
                 <Ellipse Height="8" Stroke="#FFFFC700" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                 <Ellipse Height="8" Canvas.Left="13" Stroke="#FFFFC700" Width="8" Fill="#FFFFC700" HorizontalAlignment="Left" VerticalAlignment="Top"/>

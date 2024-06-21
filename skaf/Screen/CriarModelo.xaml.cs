@@ -56,7 +56,7 @@ namespace skaf
             Directory.CreateDirectory(caminhoModelo).Attributes &= ~FileAttributes.ReadOnly;
 
 
-            Process.Start("explorer.exe", caminhoModelo);
+         
                 
                 for(int i = 0;i < path.Length;i++)
             { 
