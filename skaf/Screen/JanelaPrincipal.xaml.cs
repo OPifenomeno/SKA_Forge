@@ -113,7 +113,8 @@ namespace skaf
         private void MostrarPerfil(object sender, RoutedEventArgs e)
         {
             Screen.Config conf = new();
-            conf.Show();
+            conf.ShowDialog();
+            userName.Content = LoginScreen.usuario.Name??"User";
         }
 
         private void AbrirMenu(object sender, RoutedEventArgs e)
@@ -145,5 +146,13 @@ namespace skaf
                 });
             }
         }
+
+        private void Sair(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
+
+
+
 }

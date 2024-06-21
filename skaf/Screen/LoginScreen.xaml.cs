@@ -28,35 +28,10 @@ namespace skaf
             InitializeComponent();
            
         }
-        //private async void Atualizar()
-        //{
-        //    await manager.UpdateApp();
-        //    MessageBox.Show("Reinicie o app!");
-        //    this.Close();
-        //}
-
-        //private async void VerificarAtualizacoes()
-        //{
-        //    manager = await UpdateManager.GitHubUpdateManager(@"https://github.com/OPifenomeno/SKA_Forge");
-
-
-        //    var updInfo = await manager.CheckForUpdate();
-        //    if(updInfo.ReleasesToApply.Count > 0)
-        //    {
-        //       MessageBoxResult result = System.Windows.MessageBox.Show("Há atualizações disponíveis. Deseja aplicá-las?","Atualização Disponível",MessageBoxButton.YesNo,MessageBoxImage.None,MessageBoxResult.No);
-        //        if (result == MessageBoxResult.Yes) {
-
-        //            Atualizar();
-                    
-        //        }
-            
-        //    }
-        
-        //}
+       
 
         private void Load(object sender, RoutedEventArgs e)
         {
-           // try { VerificarAtualizacoes(); } catch (Exception es){ MessageBox.Show(es.Message); }
            
             ska_logo.BeginAnimation(OpacityProperty, new DoubleAnimation()
             {
@@ -140,14 +115,7 @@ namespace skaf
 
         private async void Logar(object sender, RoutedEventArgs e)
         {
-            if (Properties.Settings.Default.primeiroLogin)
-            {
-                await Login();
-            }
-            else
-            {
-                await SilentLogin();
-            }
+            await SilentLogin();
 
         }
         public async Task SilentLogin() {
@@ -156,12 +124,17 @@ namespace skaf
                 .Build();
             
             var scopes = new[] { "https://graph.microsoft.com/User.Read" };
+            var acc = await cca.GetAccountsAsync();
             
-            try { var result = await cca.AcquireTokenSilent(scopes,"famigerado").ExecuteAsync();
+            try {
+               
+                var result = await cca.AcquireTokenSilent(scopes,acc.FirstOrDefault()).ExecuteAsync();
                 
             
             
-            } catch (Exception) { await Login(); }
+            } catch (Exception log) {
+                MessageBox.Show(log.Message);
+                await Login(); }
         }
 
         public async Task Login() {

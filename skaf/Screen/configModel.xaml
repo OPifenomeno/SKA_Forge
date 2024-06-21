@@ -18,7 +18,7 @@
             </ScrollViewer>
         </Border>
 
-        <RichTextBox x:Name="TextMail" Grid.Column="1" Margin="22,73,22,169" IsDocumentEnabled="True" FontFamily="Courier New">
+        <RichTextBox  x:Name="TextMail" Grid.Column="1" Margin="22,73,22,169" IsDocumentEnabled="True" FontFamily="Courier New">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>

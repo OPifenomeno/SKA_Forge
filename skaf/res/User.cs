@@ -38,10 +38,10 @@ namespace skaf
                     text = text.Replace("Fone:", string.Empty).Replace("@FONE", string.Empty);
                 }
 
-                if (Foto != null)
+                if (Properties.Settings.Default.imagem != null)
                 {
-                    string imagemBase64 = Convert.ToBase64String(Foto);
-                    string imagemHtml = $"<img src='data:image/jpeg;base64,{imagemBase64}' width=\"136\" height=\"110\"/>";
+                
+                    string imagemHtml = $"<img src='data:image/jpeg;base64,{Properties.Settings.Default.imagem}' width=\"136\" height=\"110\"/>";
                     text = text.Replace("@FOTO", imagemHtml);
                 }
                 else { 
