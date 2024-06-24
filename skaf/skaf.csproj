@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\Settings.settings" />
     <None Remove="res\Apresentação1.mp4" />
     <None Remove="res\edit.png" />
     <None Remove="res\eng.png" />
@@ -16,6 +17,14 @@
     <None Remove="res\Microsoft_logo.png" />
     <None Remove="Screen\alek2.png" />
     <None Remove="Screen\user.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
@@ -60,10 +69,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <None Update="res\assinatura.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

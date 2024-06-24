@@ -23,7 +23,7 @@ namespace skaf
             InitializeComponent();
            
             carregarModelos();
-          // try { VerificarAtt(); } catch (Exception es){ MessageBox.Show(es.Message); }
+           try { VerificarAtt(); } catch (Exception es){ MessageBox.Show(es.Message); }
         }
 
         private async void Atualizar()
@@ -114,7 +114,7 @@ namespace skaf
         {
             Screen.Config conf = new();
             conf.ShowDialog();
-            userName.Content = LoginScreen.usuario.Name??"User";
+            userName.Content = LoginScreen.usuario.Name??"Perfil";
         }
 
         private void AbrirMenu(object sender, RoutedEventArgs e)
