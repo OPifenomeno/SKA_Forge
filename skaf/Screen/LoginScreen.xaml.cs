@@ -133,7 +133,7 @@ namespace skaf
             
             
             } catch (Exception log) {
-               
+                MessageBox.Show(log.Message);
                 await Login(); }
         }
 

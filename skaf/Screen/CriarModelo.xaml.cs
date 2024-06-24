@@ -17,7 +17,6 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Security.AccessControl;
 using System.Security.Principal;
-using System.Text;
 namespace skaf
 {
     /// <summary>
@@ -67,24 +66,10 @@ namespace skaf
                 }
                 else
                 {
+                   
 
-                   
-                   
-                    
                     File.Copy(path[i], System.IO.Path.Combine(caminhoModelo, $"Email_{i + 1}.txt"), true);
-
-                    string content;
-                    using (var reader = new StreamReader(path[i]))
-                    {
-                        content = reader.ReadToEnd();
-                    }
-                    using (var writer = new StreamWriter(System.IO.Path.Combine(caminhoModelo, $"Email_{i + 1}.txt"), true, Encoding.UTF8))
-                    {
-                        writer.Write(content);
-                    }
-
-
-
+                    
 
                 }
 
