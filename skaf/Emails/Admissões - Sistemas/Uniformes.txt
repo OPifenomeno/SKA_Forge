@@ -1,0 +1,471 @@
+<head>
+    <style>
+        #meio {
+            text-align: center
+        }
+
+        #tabT {
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+            #tabT td {
+                font-weight: bold;
+                padding-right: 40px;
+            }
+
+        table {
+        border-collapse:collapse
+        }
+        div {
+        border-color:black;
+        
+        }
+    </style>
+
+</head>
+
+<p>Olá,</p>
+<p>
+    Os colaboradores que são contratados em modalidade externa, ou seja, que realizarão visitas constantes em clientes, recebem um kit de uniformes, composto por 4 camisas
+    (modelos e tamanhos discriminados no corpo do e-mail).<br />
+    Favor me passar o seu tamanho e a sua escolha para fazermos a encomenda.<br />
+    <b>Obs.: Caso seja algum tamanho especial, favor entrar em contato comigo antes do pedido.</b>
+</p>
+<p><font color="red"><b><h3>Abaixo algumas informações:</h3></b></font></p>
+<ul>
+    <li><u>É para ser solicitada as camisas conforme o tamanho descrito nas tabelas, não será aceito devoluções se colocarem um tamanho no pedido e no dia da entrega optarem por outro tamanho.</u></li>
+</ul>
+
+<p>
+    <font color="red">Cores das camisas sociais:</font> azul claro, preto, cinza e branco<br />
+    <font color="red">Polos e camisas básicas:</font> preto e branco
+</p>
+<hr />
+<h3>Favor preencher o pedido na tabela abaixo.</h3>
+<!-- TABELA PREENCHER-->
+<table border="1" style="empty-cells:show">
+    <thead style="height:15px">
+        <tr style="background-color:darkolivegreen">
+            <td width="300">Nome</td>
+            <td width="300">Tipo</td>
+            <td>Sexo</td>
+            <td width="100">Cor</td>
+            <td>Tamanho</td>
+            <td>Quantidade</td>
+        </tr>
+    </thead>
+    <tr style="height:20px">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr style="height:20px">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr style="height:20px">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr style="height:20px">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+
+</table>
+<br />
+
+<!--EXEMPLO-->
+<p><font color="red">EXEMPLO:</font></p>
+
+<table border="1" style="empty-cells:show">
+    <thead style="height:15px">
+        <tr style="background-color:darkolivegreen">
+            <td width="300">Nome</td>
+            <td width="300">Tipo</td>
+            <td>Sexo</td>
+            <td width="100">Cor</td>
+            <td>Tamanho</td>
+            <td>Quantidade</td>
+        </tr>
+    </thead>
+    <tr style="height:20px">
+        <td>Anderson Fragoso</td>
+        <td>Camiseta Social Manga Longa
+        <td id="meio">M</td>
+        <td>Branca</td>
+        <td id="meio">P</td>
+        <td id="meio">1</td>
+    </tr>
+    <tr style="height:20px">
+        <td>Anderson Fragoso</td>
+        <td>Polo</td>
+        <td id="meio">M</td>
+        <td>Branca</td>
+        <td id="meio">P</td>
+        <td id="meio">1</td>
+    </tr>
+    <tr style="height:20px">
+        <td>Anderson Fragoso</td>
+        <td>
+            Camisa Social Manga Curta
+        </td>
+        <td id="meio">M</td>
+        <td>Preta</td>
+        <td id="meio">P</td>
+        <td id="meio">1</td>
+    </tr>
+    <tr style="height:20px">
+        <td>Anderson Fragoso</td>
+        <td>
+            Básica Masculina
+        </td>
+        <td id="meio">M</td>
+        <td>Preta</td>
+        <td id="meio">P</td>
+        <td id="meio">1</td>
+    </tr>
+
+
+</table>
+
+<h3>Segue abaixo tabela de medida dos uniformes:</h3>
+<hr />
+<!--CAMISA SOCIAL TABELA-->
+<h4><u><b>CAMISA SOCIAL:</b></u></h4>
+<div style="border:solid;width:800px">
+    <center><b><font color="red">MEDIDAS MASCULINAS (Medidas em cm)</font></b></center>
+
+
+    <table id="tabT">
+        <thead>
+            <tr style="background-color:royalblue">
+                <td>TAMANHO</td>
+                <td>COSTAS</td>
+                <td>BUSTO</td>
+                <td>COMP.DO CORPO</td>
+                <td>COMP.DA MANDA</td>
+            </tr>
+
+            <tr>
+                <td>P</td>
+                <td>46</td>
+                <td>96</td>
+                <td>70</td>
+                <td>64</td>
+            </tr>
+
+            <tr style="background-color:royalblue">
+                <td>M</td>
+                <td>48</td>
+                <td>104</td>
+                <td>74</td>
+                <td>65</td>
+            </tr>
+
+            <tr>
+                <td>G</td>
+                <td>50</td>
+                <td>112</td>
+                <td>78</td>
+                <td>66</td>
+            </tr>
+
+            <tr style="background-color:royalblue">
+                <td>GG</td>
+                <td>52</td>
+                <td>120</td>
+                <td>80</td>
+                <td>68</td>
+            </tr>
+
+
+            <tr>
+                <td>EG</td>
+                <td>54</td>
+                <td>128</td>
+                <td>80</td>
+                <td>68</td>
+            </tr>
+            <tr style="background-color:royalblue">
+                <td>EGG</td>
+                <td>56</td>
+                <td>136</td>
+                <td>82</td>
+                <td>68</td>
+            </tr>
+
+        </thead>
+    </table>
+    <br /><hr />
+    <center><b><font color="red">MEDIDAS FEMININAS(em cm)</font></b></center>
+
+
+    <table id="tabT">
+        <thead>
+            <tr style="background-color:darkolivegreen">
+                <td>TAMANHO</td>
+                <td>COSTAS</td>
+                <td>BUSTO</td>
+                <td>COMP.DO CORPO</td>
+                <td>COMP. DA MANGA</td>
+            </tr>
+            <tr>
+                <td>PP</td>
+                <td>36</td>
+                <td>80</td>
+                <td>60</td>
+                <td>61</td>
+            </tr>
+
+            <tr style="background-color:darkolivegreen">
+                <td>P</td>
+                <td>38</td>
+                <td>88</td>
+                <td>60</td>
+                <td>61</td>
+            </tr>
+            <tr>
+                <td>M</td>
+                <td>40</td>
+                <td>92</td>
+                <td>62</td>
+                <td>62</td>
+            </tr>
+
+            <tr style="background-color:darkolivegreen">
+                <td>G</td>
+                <td>42</td>
+                <td>100</td>
+                <td>64</td>
+                <td>63</td>
+            </tr>
+
+            <tr>
+                <td>GG</td>
+                <td>44</td>
+                <td>108</td>
+                <td>65</td>
+                <td>64</td>
+            </tr>
+            <tr style="background-color:darkolivegreen">
+                <td>EG</td>
+                <td>46</td>
+                <td>144</td>
+                <td>66</td>
+                <td>64</td>
+            </tr>
+            <tr>
+                <td>EGG</td>
+                <td>48</td>
+                <td>116</td>
+                <td>68</td>
+                <td>64</td>
+            </tr>
+        </thead>
+
+    </table>
+    <p>
+        <b>Costas:</b> Medida de ombro a ombro.<br />
+        <b>Busto:</b>Toda a circunferência do busto.<br />
+        <b>Comp. Do Corpo:</b> Do ombro até o quadril.<br />
+        <b>Comp. Da Manga:</b> Ombro até o pulso.
+    </p>
+
+</div>
+<hr />
+
+<!--  CAMISA BÁSICA TABELA-->
+<h3><u>CAMISA  VISOLYCRA</u></h3>
+<div style="border:solid;width:800px">
+    <center><b><font color="red">MODELO BÁSICA FEM (Medidas em cm)</font></b></center>
+    <table id="tabT">
+        <tr style="background-color:darkolivegreen">
+            <td>TAMANHO FALFANUM.</td>
+            <td>PP</td>
+            <td>P</td>
+            <td>M</td>
+            <td>G</td>
+            <td>GG</td>
+            <td>3G</td>
+        </tr>
+        <tr>
+            <td>BUSTO</td>
+            <td>78</td>
+            <td>82</td>
+            <td>86</td>
+            <td>90</td>
+            <td>94</td>
+            <td>98</td>
+        </tr>
+        <tr style="background-color:darkolivegreen">
+            <td>CINTURA</td>
+            <td>68</td>
+            <td>72</td>
+            <td>76</td>
+            <td>80</td>
+            <td>84</td>
+            <td>88</td>
+        </tr>
+        <tr>
+            <td>QUADRIL</td>
+            <td>74</td>
+            <td>78</td>
+            <td>82</td>
+            <td>86</td>
+            <td>90</td>
+            <td>94</td>
+        </tr>
+        <tr style="background-color:darkolivegreen">
+            <td>COMPRIMENTO</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+        </tr>
+        <tr>
+            <td>COMP.MANGA CURTA</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>21</td>
+        </tr>
+
+    </table>
+</div>
+<hr />
+<!--  CAMISA POLO TABELA  -->
+
+<h3><u>CAMISA POLO:</u></h3>
+<div style="border:solid;width:800px">
+    <center><b><font color="red">POLO MASCULINA TRADICIONAL (Medidas em cm)</font></b></center>
+    <table id="tabT">
+        <tr style="background-color:royalblue">
+            <td>TAMANHO ALFA</td>
+            <td>PP</td>
+            <td>P</td>
+            <td>M</td>
+            <td>G</td>
+            <td>GG</td>
+            <td>3G</td>
+        </tr>
+        <tr>
+            <td>ESPALDA</td>
+            <td>44</td>
+            <td>46</td>
+            <td>48</td>
+            <td>50</td>
+            <td>52</td>
+            <td>54</td>
+        </tr>
+        <tr style="background-color:royalblue">
+            <td>TORAX</td>
+            <td>98</td>
+            <td>104</td>
+            <td>110</td>
+            <td>116</td>
+            <td>122</td>
+            <td>128</td>
+        </tr>
+        <tr>
+            <td>COMPRIMENTO</td>
+            <td>67,5</td>
+            <td>70</td>
+            <td>72,5</td>
+            <td>75</td>
+            <td>77,5</td>
+            <td>80</td>
+        </tr>
+        <tr style="background-color:royalblue">
+            <td>COMP.MANGA CURTA</td>
+            <td>21,5</td>
+            <td>23</td>
+            <td>24,5</td>
+            <td>26</td>
+            <td>27,5</td>
+            <td>29</td>
+        </tr>
+
+    </table>
+
+</div>
+<br />
+<br />
+<div style="border:thin;border:solid;width:800px">
+    <center><b><font color="red">POLO FEMININA TRADICIONAL (Medidas em cm)</font></b></center>
+    <table id="tabT">
+        <tr style="background-color:darkolivegreen">
+            <td>TAMANHO ALFA</td>
+            <td>PP</td>
+            <td>P</td>
+            <td>M</td>
+            <td>G</td>
+            <td>GG</td>
+            <td>3G</td>
+        </tr>
+        <tr>
+            <td>BUSTO</td>
+            <td>80</td>
+            <td>86</td>
+            <td>92</td>
+            <td>98</td>
+            <td>104</td>
+            <td>110</td>
+        </tr>
+        <tr style="background-color:darkolivegreen">
+            <td>QUADRIL</td>
+            <td>77</td>
+            <td>83</td>
+            <td>89</td>
+            <td>95</td>
+            <td>101</td>
+            <td>107</td>
+        </tr>
+        <tr>
+            <td>COMRPIMENTO DO CORPO</td>
+            <td>59,5</td>
+            <td>61</td>
+            <td>62,5</td>
+            <td>64</td>
+            <td>65,5</td>
+            <td>67</td>
+        </tr>
+        <tr style="background-color:darkolivegreen">
+            <td>COMP.DA MANGA CURTA</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+        </tr>
+
+    </table>
+</div>
+<hr />
+<p>Qualquer dúvida fico à disposição.</p>
+<p>Att.</p>
+
+
+

@@ -9,6 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Emails\Admissões - Automação\Gympass.txt" />
+    <None Remove="Emails\Admissões - Automação\Plano de saúde.txt" />
+    <None Remove="Emails\Admissões - Automação\Plano odontológico.txt" />
+    <None Remove="Emails\Admissões - Automação\Seguro de Vida.txt" />
+    <None Remove="Emails\Admissões - Automação\Uniformes.txt" />
+    <None Remove="Emails\Anexos\Formulário Designação de Beneficiários.pdf" />
+    <None Remove="Emails\Anexos\Lista de procedimentos - Odonto.pdf" />
+    <None Remove="Emails\Anexos\planilha para inclusões- TIPAN.xls" />
+    <None Remove="Emails\Anexos\Termo de Opção - Dental SKA.pdf" />
+    <None Remove="Emails\Anexos\Unimed Fesp Nacional - Apresentação.doc" />
     <None Remove="res\Apresentação1.mp4" />
     <None Remove="res\edit.png" />
     <None Remove="res\eng.png" />
@@ -19,6 +29,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Emails\Admissões - Automação\Gympass.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Admissões - Automação\Plano de saúde.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Admissões - Automação\Plano odontológico.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Admissões - Automação\Seguro de Vida.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Admissões - Automação\Uniformes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Anexos\Formulário Designação de Beneficiários.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Anexos\Lista de procedimentos - Odonto.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Anexos\planilha para inclusões- TIPAN.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Anexos\Termo de Opção - Dental SKA.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Emails\Anexos\Unimed Fesp Nacional - Apresentação.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\edit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -60,6 +100,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Emails\Admissões - Sistemas\Gympass.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Emails\Admissões - Sistemas\Plano de saúde.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Emails\Admissões - Sistemas\Plano odontológico.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Emails\Admissões - Sistemas\Seguro de vida.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Emails\Admissões - Sistemas\Uniformes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -74,7 +129,7 @@
 		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
 		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
 
-		<Version>1.2.0</Version>
+		<Version>1.2.1</Version>
 
 		<NuspecFile>$(SolutionDir)skaf\ReleaseSpec.nuspec</NuspecFile>
 

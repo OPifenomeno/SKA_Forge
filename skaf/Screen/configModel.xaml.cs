@@ -53,12 +53,22 @@ namespace skaf.Screen
                     ultimoBt = file.Name;
                     titleBox.Text = file.Name.Replace(".txt","");
                     TextMail.Document.Blocks.Clear();
-                    try { TextMail.AppendText(File.ReadAllText(System.IO.Path.GetFullPath(file.FullName)));
+
+                    
+
+                    try {
+                        Encoding encoding = Encoding.UTF8;
+                        
+
+                        string fileContent = File.ReadAllText(file.FullName,encoding);
+                    
+
+                        TextMail.AppendText(fileContent);
                     
                     
                     
                     
-                    } catch{}
+                    } catch(Exception i){ MessageBox.Show(i.Message); }
                     
                 };
                

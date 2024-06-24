@@ -1,0 +1,11 @@
+Attachment: C:\Users\emanuel.junior\source\repos\SKA_Forge\skaf\bin\Release\net8.0-windows\Emails\Anexos\Formulário Designação de Beneficiários.pdf;
+
+<p>
+    Olá,<br />
+    A SKA fornece um seguro de vida a todos os colaboradores, a adesão ao seguro é obrigatória.
+    Há um desconto simbólico no valor de R$3,00 por mês.<br />
+    Segue em anexo o formulário para preenchimento, assim que preenchido me enviar por e-mail escaneado e o original entregar no ADM
+</p>
+<p><b><font color="red">Preencher em Estipulante:</font>SKA Desenvolvimento e Licenciamento de Sistemas LTDA</b></p>
+<p>Não precisa preencher Subestipulante e Nº de Subcontrato!</p>
+
