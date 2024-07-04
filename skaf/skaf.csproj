@@ -10,11 +10,23 @@
 
   <ItemGroup>
     <None Remove="Properties\Settings.settings" />
-    <None Remove="res\Apresentação1.mp4" />
+    <None Remove="Resources\Formulário Designação de Beneficiários.pdf" />
+    <None Remove="Resources\Gympass.txt" />
+    <None Remove="Resources\Lista de procedimentos - Odonto.pdf" />
+    <None Remove="Resources\planilha para inclusões- TIPAN.xls" />
+    <None Remove="Resources\PlanoOdonto.txt" />
+    <None Remove="Resources\PlanoUnimed.txt" />
+    <None Remove="Resources\SegudoDeVidaSis.txt" />
+    <None Remove="Resources\SeguroDeVidaAUT.txt" />
+    <None Remove="Resources\Termo de Opção - Dental SKA.pdf" />
+    <None Remove="Resources\Uniformes.txt" />
+    <None Remove="Resources\Unimed Fesp Nacional - Apresentação.doc" />
+    <None Remove="Resources\VALE_TRANSPORTE.txt" />
     <None Remove="res\edit.png" />
     <None Remove="res\eng.png" />
     <None Remove="res\Logo_SKA_Azul.png" />
     <None Remove="res\Microsoft_logo.png" />
+    <None Remove="res\user.png" />
     <None Remove="Screen\alek2.png" />
     <None Remove="Screen\user.png" />
   </ItemGroup>
@@ -28,7 +40,55 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\Formulário Designação de Beneficiários.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Gympass.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Lista de procedimentos - Odonto.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\planilha para inclusões- TIPAN.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PlanoOdonto.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\PlanoUnimed.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SegudoDeVidaSis.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\SeguroDeVidaAUT.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Termo de Opção - Dental SKA.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Uniformes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Unimed Fesp Nacional - Apresentação.doc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\VALE_TRANSPORTE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\edit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\eng.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Logo_SKA_Azul.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\Microsoft_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\user.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="skamail.ico" />
@@ -47,16 +107,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="res\eng.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Resource Include="res\Logo_SKA_Azul.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="res\Microsoft_logo.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="res\user.png" />
     <Resource Include="Screen\alek2.png" />
   </ItemGroup>
 
@@ -66,12 +116,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Resource1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="res\assinatura.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Emails\Admissões - Automação\" />
+    <Folder Include="Emails\Admissões - Sistemas\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 
@@ -79,7 +140,7 @@
 		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
 		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
 
-		<Version>1.2.2</Version>
+		<Version>1.2.5</Version>
 
 		<NuspecFile>$(SolutionDir)skaf\ReleaseSpec.nuspec</NuspecFile>
 

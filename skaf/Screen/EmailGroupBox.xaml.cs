@@ -190,6 +190,7 @@ namespace skaf
 
         private async Task EnviarEmail(string para)
         {
+            
             List<object> requests = new List<object>();
             var batchRequestContent = new BatchRequestContentCollection(LoginScreen.graphClient);
             string conteudomsg(string texto)
@@ -208,7 +209,7 @@ namespace skaf
 
             string[] nome = [];
             List<byte[]> attachments = new List<byte[]>();
-            List<object> attachFinal = new List<object>();
+           
             DirectoryInfo inf = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", ModelName.Text));
             if (!inf.Exists || inf.GetFiles().Length == 0) { MessageBox.Show("Confira o diretório."); }
             else
@@ -217,6 +218,8 @@ namespace skaf
 
                 foreach (var f in inf.GetFiles()) 
                 {
+                    List<object> attachFinal = new List<object>();
+                   
                     string conteudo = File.ReadAllText(f.FullName) + "\n" + (LoginScreen.usuario.Assinatura != null ? LoginScreen.usuario.Assinatura : null);
 
 

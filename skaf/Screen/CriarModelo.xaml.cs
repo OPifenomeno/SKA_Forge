@@ -67,7 +67,7 @@ namespace skaf
                 else
                 {
                    
-
+                    
                     File.Copy(path[i], System.IO.Path.Combine(caminhoModelo, $"Email_{i + 1}.txt"), true);
                     
 

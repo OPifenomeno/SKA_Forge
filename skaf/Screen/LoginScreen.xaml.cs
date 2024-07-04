@@ -12,6 +12,7 @@ using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Identity.Client.NativeInterop;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default;
 using Squirrel;
+using skaf.res;
 namespace skaf
 {
     /// <summary>
