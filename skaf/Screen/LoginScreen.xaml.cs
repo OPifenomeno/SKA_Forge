@@ -12,6 +12,7 @@ using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Identity.Client.NativeInterop;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default;
 using Squirrel;
+using skaf.res;
 namespace skaf
 {
     /// <summary>
@@ -129,11 +130,14 @@ namespace skaf
             try {
                
                 var result = await cca.AcquireTokenSilent(scopes,acc.FirstOrDefault()).ExecuteAsync();
-                
-            
-            
+                Properties.Settings.Default.Nome = Properties.Settings.Default.Nome ?? result.Account.Username;
+                Properties.Settings.Default.token = result.AccessToken;
+                Properties.Settings.Default.Save();
+                usuario = new User(result.Account.Username, result.AccessToken);
+
+
             } catch (Exception log) {
-                MessageBox.Show(log.Message);
+              
                 await Login(); }
         }
 

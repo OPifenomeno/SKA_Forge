@@ -59,15 +59,6 @@ namespace skaf.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool primeiroLogin {
-            get {
-                return ((bool)(this["primeiroLogin"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
@@ -101,6 +92,18 @@ namespace skaf.Properties {
             }
             set {
                 this["linkedin"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool primeiroLogin {
+            get {
+                return ((bool)(this["primeiroLogin"]));
+            }
+            set {
+                this["primeiroLogin"] = value;
             }
         }
     }
