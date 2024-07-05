@@ -23,7 +23,7 @@ namespace skaf
             InitializeComponent();
            
             carregarModelos();
-           try { VerificarAtt(); } catch {  }
+           try { VerificarAtt();} catch {  }
         }
 
         private async void Atualizar()
@@ -80,7 +80,7 @@ namespace skaf
                 {
                     DirectoryInfo a = new DirectoryInfo(Path.Combine(past.FullName,"Anexos"));
                     DirectoryInfo p = new DirectoryInfo(Path.Combine(past.FullName, "Admissões - automação"));
-                    a.Create();
+                    
                     p.Create();
 
                     File.WriteAllBytes(Path.Combine(a.FullName, "Unimed Fesp Nacional - Apresentação.doc"),Properties.Resource1.Unimed_Fesp_Nacional___Apresentação);
@@ -167,7 +167,7 @@ namespace skaf
 
                     File.WriteAllText(Path.Combine(p1.FullName, "Uniformes.txt"), Properties.Resource1.Uniformes);
                     //3   
-                    File.WriteAllText(Path.Combine(p1.FullName, "Plano Odontológico.txt"), Properties.Resource1.PlanoOdonto);
+                    File.WriteAllText(Path.Combine(p1.FullName, "Plano Odontologico.txt"), Properties.Resource1.PlanoOdonto);
 
                     for (int i = 0; i < paths1.Length; i++)
                     {
@@ -192,6 +192,7 @@ namespace skaf
 
 
                     Properties.Settings.Default.primeiroLogin = false;
+                    Properties.Settings.Default.Save();
                 }
                 past.GetDirectories().ToList().ForEach(dir =>
                 {
@@ -280,6 +281,8 @@ namespace skaf
         private void Sair(object sender, RoutedEventArgs e)
         {
             new LoginScreen().Show();
+            Properties.Settings.Default.primeiroLogin = true;
+            Properties.Settings.Default.Save();
             this.Close();
         }
 
