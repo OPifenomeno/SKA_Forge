@@ -173,6 +173,6 @@
     <value>..\Resources\Unimed Fesp Nacional - Apresentação.doc;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="VALE_TRANSPORTE" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VALE_TRANSPORTE.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+    <value>VALE_TRANSPORTE.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

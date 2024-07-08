@@ -325,19 +325,20 @@ namespace skaf.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 
-        ///Olá,
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;p&gt;
+        ///Olá,&lt;br/&gt;
         ///
-        ///Você utilizará vale transporte?
+        ///Você utilizará vale transporte?&lt;br/&gt;
         ///
-        ///Se sim, favor me passar as informações a baixo:
+        ///Se sim, favor me passar as informações a baixo:&lt;/br&gt;
         ///
-        ///- Qual a linha de ônibus que utiliza?
-        ///- Qual a empresa que administra a linha?
-        ///- Já possui cartão de transporte? Qual a numeração? 
-        ///- Quantas passagens utiliza por dia?
-        ///- Qual o valor unitário da passagem que você utiliza?
+        ///- Qual a linha de ônibus que utiliza?&lt;/br&gt;
+        ///- Qual a empresa que administra a linha?&lt;/br&gt;
+        ///- Já possui cartão de transporte? Qual a numeração? &lt;/br&gt;
+        ///- Quantas passagens utiliza por dia?&lt;/br&gt;
+        ///- Qual o valor unitário da passagem que você utiliza?&lt;/br&gt;
         ///
+        ///&lt;/p&gt;
         ///
         ///.
         /// </summary>

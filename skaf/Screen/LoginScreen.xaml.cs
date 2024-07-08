@@ -166,13 +166,13 @@ namespace skaf
             var scopes = new[] { "https://graph.microsoft.com/User.Read" };
             try {
                 var result = await cca.AcquireTokenInteractive(scopes).ExecuteAsync();
-              
-                    new JanelaPrincipal().Show();
+                new JanelaPrincipal().Show();
+
 
                 Properties.Settings.Default.Nome = Properties.Settings.Default.Nome??result.Account.Username;
                 Properties.Settings.Default.token = result.AccessToken;
                 Properties.Settings.Default.Save();
-                usuario = new User(result.Account.Username,result.AccessToken);
+              usuario = new User(result.Account.Username,result.AccessToken);
                 this.Close();
             }
             catch (Exception ex)
@@ -182,7 +182,7 @@ namespace skaf
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Falha ao executar Login!: \n" + ex.Message);
+                    System.Windows.MessageBox.Show("Falha ao executar Login!: \n" + ex.Message + "\n\n" + ex.StackTrace);
                 }
                 
             }

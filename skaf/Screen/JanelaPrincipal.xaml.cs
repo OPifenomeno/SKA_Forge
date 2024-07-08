@@ -80,7 +80,7 @@ namespace skaf
                 {
                     DirectoryInfo a = new DirectoryInfo(Path.Combine(past.FullName,"Anexos"));
                     DirectoryInfo p = new DirectoryInfo(Path.Combine(past.FullName, "Admissões - automação"));
-                    
+                    a.Create();
                     p.Create();
 
                     File.WriteAllBytes(Path.Combine(a.FullName, "Unimed Fesp Nacional - Apresentação.doc"),Properties.Resource1.Unimed_Fesp_Nacional___Apresentação);
@@ -92,7 +92,7 @@ namespace skaf
                     string[] paths = {
                         Path.Combine(p.FullName, "Seguro de Vida.txt"),
                         Path.Combine(p.FullName, "Plano Unimed.txt"),
-                        Path.Combine(p.FullName, "Plano Odontológico.txt")
+                        Path.Combine(p.FullName, "Plano Odontologico.txt")
                     };
                     string[] att = {
                    $"Attachment:{Path.Combine(a.FullName, "Formulário Designação de Beneficiários.pdf")};",
@@ -118,7 +118,7 @@ namespace skaf
                        
                         File.WriteAllText(Path.Combine(p.FullName, "Uniformes.txt"), Properties.Resource1.Uniformes);
                     //3   
-                        File.WriteAllText(Path.Combine(p.FullName, "Plano Odontológico.txt"), Properties.Resource1.PlanoOdonto);
+                        File.WriteAllText(Path.Combine(p.FullName, "Plano Odontologico.txt"), Properties.Resource1.PlanoOdonto);
 
                     for (int i = 0;i<paths.Length;i++) {
                         string contA= "";
@@ -141,7 +141,7 @@ namespace skaf
                     string[] paths1 = {
                         Path.Combine(p1.FullName, "Seguro de Vida.txt"),
                         Path.Combine(p1.FullName, "Plano Unimed.txt"),
-                        Path.Combine(p1.FullName, "Plano Odontológico.txt")
+                        Path.Combine(p1.FullName, "Plano Odontologico.txt")
                     };
                     string[] att1 = {
                    $"Attachment:{Path.Combine(a.FullName, "Formulário Designação de Beneficiários.pdf")};",
