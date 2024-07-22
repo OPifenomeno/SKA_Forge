@@ -1,4 +1,5 @@
 ﻿
+using NuGet;
 using skaf.Screen;
 using Squirrel;
 using System.IO;
@@ -73,10 +74,12 @@ namespace skaf
             MessageBox.Show("Uma revisão foi feita no app! O que mudou?\n\n" +
                 "-Correção de bugs.\n" +
                 "-Atualização do layout de uniformes\n\n" +
-                "Se você perdeu as modifi");
+                "Se você perdeu as modificações/modelos que criou, por favor, informe em (emanuel.junior@ska.com.br)");
         }
 
         void carregarModelos() {
+            if (Properties.Settings.Default.primeiroLogin == true)
+                novidades();
 
             conteiner.Children.Clear();
             DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));

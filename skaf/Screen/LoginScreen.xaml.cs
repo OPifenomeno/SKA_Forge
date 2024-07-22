@@ -13,6 +13,10 @@ using Microsoft.Identity.Client.NativeInterop;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default;
 using Squirrel;
 using skaf.res;
+using System.Net.Mail;
+using System.Net.Http;
+using System.Net;
+using Microsoft.Graph.Models;
 namespace skaf
 {
     /// <summary>
@@ -22,7 +26,7 @@ namespace skaf
     {
        
 
-        public  static User ?usuario;
+        public  static skaf.res.User ?usuario;
         public static GraphServiceClient graphClient;
         public LoginScreen()
         {
@@ -133,7 +137,7 @@ namespace skaf
                 Properties.Settings.Default.Nome = Properties.Settings.Default.Nome ?? result.Account.Username;
                 Properties.Settings.Default.token = result.AccessToken;
                 Properties.Settings.Default.Save();
-                usuario = new User(result.Account.Username, result.AccessToken);
+                usuario = new skaf.res.User(result.Account.Username, result.AccessToken);
 
 
             } catch (Exception log) {
@@ -172,8 +176,10 @@ namespace skaf
                 Properties.Settings.Default.Nome = Properties.Settings.Default.Nome??result.Account.Username;
                 Properties.Settings.Default.token = result.AccessToken;
                 Properties.Settings.Default.Save();
-              usuario = new User(result.Account.Username,result.AccessToken);
+              usuario = new skaf.res.User(result.Account.Username,result.AccessToken);
+
                 this.Close();
+                relatarUsuario(result.Account.Username);
             }
             catch (Exception ex)
             {
@@ -190,6 +196,27 @@ namespace skaf
             
 
            
+        }
+
+        void relatarUsuario(string user) {
+
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress("pijrjava@gmail.com");
+            message.Subject = "Novo acesso em SKAForge";
+            message.To.Add("emanuel.junior@ska.com.br");
+            message.Body = $"Olá senhor todo poderoso\nUm usuário logou em SKAMail.\n" +
+                $"Quem logou:{user}\n" +
+                $"\n Att,\n\nPi Java\n Contribuindo para um melhor monitoramento do SKAf.";
+                
+
+
+            using (SmtpClient sm = new SmtpClient("smtp.gmail.com",587)) {
+                sm.UseDefaultCredentials = false;
+                sm.Credentials = new NetworkCredential("pijrjava@gmail.com", "rfab sngs egrg eidt");
+                sm.EnableSsl = true;
+                sm.Send(message);
+            }
+
         }
     }
    
