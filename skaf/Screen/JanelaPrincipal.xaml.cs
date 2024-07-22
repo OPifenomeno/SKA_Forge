@@ -69,9 +69,15 @@ namespace skaf
 
 
 
-
+        void novidades() {
+            MessageBox.Show("Uma revisão foi feita no app! O que mudou?\n\n" +
+                "-Correção de bugs.\n" +
+                "-Atualização do layout de uniformes\n\n" +
+                "Se você perdeu as modifi");
+        }
 
         void carregarModelos() {
+
             conteiner.Children.Clear();
             DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));
             if (past.Exists)
