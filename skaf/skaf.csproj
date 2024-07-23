@@ -9,6 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Emails\Admissões - Automação\**" />
+    <Compile Remove="Emails\Admissões - Sistemas\**" />
+    <EmbeddedResource Remove="Emails\Admissões - Automação\**" />
+    <EmbeddedResource Remove="Emails\Admissões - Sistemas\**" />
+    <None Remove="Emails\Admissões - Automação\**" />
+    <None Remove="Emails\Admissões - Sistemas\**" />
+    <Page Remove="Emails\Admissões - Automação\**" />
+    <Page Remove="Emails\Admissões - Sistemas\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Properties\Settings.settings" />
     <None Remove="Resources\Formulário Designação de Beneficiários.pdf" />
     <None Remove="Resources\Gympass.txt" />
@@ -124,11 +135,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Emails\Admissões - Automação\" />
-    <Folder Include="Emails\Admissões - Sistemas\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="Properties\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
@@ -140,7 +146,7 @@
 		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
 		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
 
-		<Version>1.2.6</Version>
+		<Version>1.2.7</Version>
 
 		<NuspecFile>$(SolutionDir)skaf\ReleaseSpec.nuspec</NuspecFile>
 
