@@ -2,6 +2,7 @@
 using NuGet;
 using skaf.Screen;
 using Squirrel;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -99,7 +100,7 @@ namespace skaf
                   
                    
 
-                    if (!a.Exists)
+                    if (!a.Exists || Properties.Settings.Default.primeiroLogin)
                     {
                         a.Create();
                         File.WriteAllBytes(Path.Combine(a.FullName, "Unimed Fesp Nacional - Apresentação.doc"), Properties.Resource1.Unimed_Fesp_Nacional___Apresentação);
@@ -127,7 +128,7 @@ namespace skaf
                     };
 
 
-                    if (!p.Exists)
+                    if (!p.Exists || Properties.Settings.Default.primeiroLogin)
                     {
                         p.Create();
                     
@@ -180,7 +181,7 @@ namespace skaf
                     };
 
                     //cria arquivo dos e-mails
-                    if (!p1.Exists) { 
+                    if (!p1.Exists || Properties.Settings.Default.primeiroLogin) { 
                         p1.Create();
                     File.WriteAllText(p1 + "/Gympass.txt", Properties.Resource1.Gympass);
                     File.WriteAllText(Path.Combine(p1.FullName, "Vale Transporte.txt"), Properties.Resource1.VALE_TRANSPORTE);
@@ -305,10 +306,11 @@ namespace skaf
 
         private void Sair(object sender, RoutedEventArgs e)
         {
-            new LoginScreen().Show();
+            
             Properties.Settings.Default.primeiroLogin = true;
             Properties.Settings.Default.Save();
-            this.Close();
+            System.Diagnostics.Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+            Application.Current.Shutdown();
         }
 
         private void VerificarAtt(object sender, RoutedEventArgs e)
