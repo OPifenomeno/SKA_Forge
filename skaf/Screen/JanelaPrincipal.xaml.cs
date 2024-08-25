@@ -4,6 +4,7 @@ using skaf.Screen;
 using Squirrel;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -30,10 +31,10 @@ namespace skaf
 
         private async void Atualizar()
         {
-            
             await manager.UpdateApp();
             MessageBox.Show("Reinicie o app!");
-            this.Close();
+            Application.Current.Shutdown();
+            Process.Start(Assembly.GetExecutingAssembly().FullName);
         }
 
         private async void VerificarAtt()
@@ -75,7 +76,7 @@ namespace skaf
             
             MessageBox.Show("Uma revisão foi feita no app! O que mudou?\n\n" +
                 "-Correção de bugs.\n" +
-                "-Atualização do layout de uniformes\n\n" +
+                "-Adição do novo" +
                 "Se você perdeu as modificações/modelos que criou, por favor, informe em (emanuel.junior@ska.com.br)");
 
 
