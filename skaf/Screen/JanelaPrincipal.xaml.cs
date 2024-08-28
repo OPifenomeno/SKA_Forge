@@ -1,7 +1,10 @@
 ﻿
+using NuGet;
 using skaf.Screen;
 using Squirrel;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -23,15 +26,15 @@ namespace skaf
             InitializeComponent();
            
             carregarModelos();
-           try { VerificarAtt(); } catch {  }
+           try { VerificarAtt();} catch {  }
         }
 
         private async void Atualizar()
         {
-            
             await manager.UpdateApp();
             MessageBox.Show("Reinicie o app!");
-            this.Close();
+            Application.Current.Shutdown();
+            Process.Start(Assembly.GetExecutingAssembly().FullName);
         }
 
         private async void VerificarAtt()
@@ -69,9 +72,21 @@ namespace skaf
 
 
 
+        void novidades() {
+            
+            MessageBox.Show("Uma revisão foi feita no app! O que mudou?\n\n" +
+                "-Correção de bugs.\n" +
+                "-Adição do novo" +
+                "Se você perdeu as modificações/modelos que criou, por favor, informe em (emanuel.junior@ska.com.br)");
 
+
+
+        }
 
         void carregarModelos() {
+            
+                novidades();
+
             conteiner.Children.Clear();
             DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));
             if (past.Exists)
@@ -80,19 +95,25 @@ namespace skaf
                 {
                     DirectoryInfo a = new DirectoryInfo(Path.Combine(past.FullName,"Anexos"));
                     DirectoryInfo p = new DirectoryInfo(Path.Combine(past.FullName, "Admissões - automação"));
-                    a.Create();
-                    p.Create();
+                    DirectoryInfo p1 = new DirectoryInfo(Path.Combine(past.FullName, "Admissões - sistemas"));
+                    
+                    
+                  
+                   
 
-                    File.WriteAllBytes(Path.Combine(a.FullName, "Unimed Fesp Nacional - Apresentação.doc"),Properties.Resource1.Unimed_Fesp_Nacional___Apresentação);
-                    File.WriteAllBytes(Path.Combine(a.FullName, "Termo de Opção - Dental SKA.pdf"), Properties.Resource1.Termo_de_Opção___Dental_SKA);
-                    File.WriteAllBytes(Path.Combine(a.FullName, "planilha para inclusões- TIPAN.xls"), Properties.Resource1.planilha_para_inclusões__TIPAN);
-                    File.WriteAllBytes(Path.Combine(a.FullName, "Lista de procedimentos - Odonto.pdf"), Properties.Resource1.Lista_de_procedimentos___Odonto);
-                    File.WriteAllBytes(Path.Combine(a.FullName, "Formulário Designação de Beneficiários.pdf"), Properties.Resource1.Formulário_Designação_de_Beneficiários);
-
+                    if (!a.Exists || Properties.Settings.Default.primeiroLogin)
+                    {
+                        a.Create();
+                        File.WriteAllBytes(Path.Combine(a.FullName, "Unimed Fesp Nacional - Apresentação.doc"), Properties.Resource1.Unimed_Fesp_Nacional___Apresentação);
+                        File.WriteAllBytes(Path.Combine(a.FullName, "Termo de Opção - Dental SKA.pdf"), Properties.Resource1.Termo_de_Opção___Dental_SKA);
+                        File.WriteAllBytes(Path.Combine(a.FullName, "planilha para inclusões- TIPAN.xls"), Properties.Resource1.planilha_para_inclusões__TIPAN);
+                        File.WriteAllBytes(Path.Combine(a.FullName, "Lista de procedimentos - Odonto.pdf"), Properties.Resource1.Lista_de_procedimentos___Odonto);
+                        File.WriteAllBytes(Path.Combine(a.FullName, "Formulário Designação de Beneficiários.pdf"), Properties.Resource1.Formulário_Designação_de_Beneficiários);
+                    }
                     string[] paths = {
                         Path.Combine(p.FullName, "Seguro de Vida.txt"),
                         Path.Combine(p.FullName, "Plano Unimed.txt"),
-                        Path.Combine(p.FullName, "Plano Odontológico.txt")
+                        Path.Combine(p.FullName, "Plano Odontologico.txt")
                     };
                     string[] att = {
                    $"Attachment:{Path.Combine(a.FullName, "Formulário Designação de Beneficiários.pdf")};",
@@ -107,8 +128,13 @@ namespace skaf
 
                     };
 
+
+                    if (!p.Exists || Properties.Settings.Default.primeiroLogin)
+                    {
+                        p.Create();
+                    
                     //cria arquivo dos e-mails
-                         File.WriteAllText(p + "/Gympass.txt", Properties.Resource1.Gympass);
+                    File.WriteAllText(p + "/Gympass.txt", Properties.Resource1.Gympass);
                         File.WriteAllText(Path.Combine(p.FullName, "Vale Transporte.txt"), Properties.Resource1.VALE_TRANSPORTE);
 
                     //att 1
@@ -118,7 +144,7 @@ namespace skaf
                        
                         File.WriteAllText(Path.Combine(p.FullName, "Uniformes.txt"), Properties.Resource1.Uniformes);
                     //3   
-                        File.WriteAllText(Path.Combine(p.FullName, "Plano Odontológico.txt"), Properties.Resource1.PlanoOdonto);
+                        File.WriteAllText(Path.Combine(p.FullName, "Plano Odontologico.txt"), Properties.Resource1.PlanoOdonto);
 
                     for (int i = 0;i<paths.Length;i++) {
                         string contA= "";
@@ -134,14 +160,13 @@ namespace skaf
                         }
 
                     }
+                    }
 
 
-                    DirectoryInfo p1 = new DirectoryInfo(Path.Combine(past.FullName, "Admissões - sistemas"));
-                    p1.Create();
                     string[] paths1 = {
                         Path.Combine(p1.FullName, "Seguro de Vida.txt"),
                         Path.Combine(p1.FullName, "Plano Unimed.txt"),
-                        Path.Combine(p1.FullName, "Plano Odontológico.txt")
+                        Path.Combine(p1.FullName, "Plano Odontologico.txt")
                     };
                     string[] att1 = {
                    $"Attachment:{Path.Combine(a.FullName, "Formulário Designação de Beneficiários.pdf")};",
@@ -157,6 +182,8 @@ namespace skaf
                     };
 
                     //cria arquivo dos e-mails
+                    if (!p1.Exists || Properties.Settings.Default.primeiroLogin) { 
+                        p1.Create();
                     File.WriteAllText(p1 + "/Gympass.txt", Properties.Resource1.Gympass);
                     File.WriteAllText(Path.Combine(p1.FullName, "Vale Transporte.txt"), Properties.Resource1.VALE_TRANSPORTE);
 
@@ -167,7 +194,7 @@ namespace skaf
 
                     File.WriteAllText(Path.Combine(p1.FullName, "Uniformes.txt"), Properties.Resource1.Uniformes);
                     //3   
-                    File.WriteAllText(Path.Combine(p1.FullName, "Plano Odontológico.txt"), Properties.Resource1.PlanoOdonto);
+                    File.WriteAllText(Path.Combine(p1.FullName, "Plano Odontologico.txt"), Properties.Resource1.PlanoOdonto);
 
                     for (int i = 0; i < paths1.Length; i++)
                     {
@@ -186,12 +213,13 @@ namespace skaf
 
                     }
 
-
+                    }
 
 
 
 
                     Properties.Settings.Default.primeiroLogin = false;
+                    Properties.Settings.Default.Save();
                 }
                 past.GetDirectories().ToList().ForEach(dir =>
                 {
@@ -279,8 +307,11 @@ namespace skaf
 
         private void Sair(object sender, RoutedEventArgs e)
         {
-            new LoginScreen().Show();
-            this.Close();
+            
+            Properties.Settings.Default.primeiroLogin = true;
+            Properties.Settings.Default.Save();
+            System.Diagnostics.Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+            Application.Current.Shutdown();
         }
 
         private void VerificarAtt(object sender, RoutedEventArgs e)
