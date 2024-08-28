@@ -11,12 +11,16 @@
   <ItemGroup>
     <Compile Remove="res\Emails\Admissões - Automação\**" />
     <Compile Remove="res\Emails\Admissões - Sistemas\**" />
+    <Compile Remove="res\Emails\Admissões\**" />
     <EmbeddedResource Remove="res\Emails\Admissões - Automação\**" />
     <EmbeddedResource Remove="res\Emails\Admissões - Sistemas\**" />
+    <EmbeddedResource Remove="res\Emails\Admissões\**" />
     <None Remove="res\Emails\Admissões - Automação\**" />
     <None Remove="res\Emails\Admissões - Sistemas\**" />
+    <None Remove="res\Emails\Admissões\**" />
     <Page Remove="res\Emails\Admissões - Automação\**" />
     <Page Remove="res\Emails\Admissões - Sistemas\**" />
+    <Page Remove="res\Emails\Admissões\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -141,16 +145,12 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="res\Emails\Admissões\" />
-  </ItemGroup>
-
 
 	<PropertyGroup>
 		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
 		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
 
-		<Version>1.2.7</Version>
+		<Version>1.2.8</Version>
 
 		<NuspecFile>$(SolutionDir)skaf\ReleaseSpec.nuspec</NuspecFile>
 

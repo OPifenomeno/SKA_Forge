@@ -279,6 +279,10 @@ namespace skaf.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;head&gt;
         ///    &lt;style&gt;
+        ///        body{
+        ///            
+        ///            font-size:small;
+        ///        }
         ///        #meio {
         ///            text-align: center
         ///        }
@@ -286,27 +290,16 @@ namespace skaf.Properties {
         ///        #tabT {
         ///            border-collapse: collapse;
         ///            text-align: center;
+        ///            width: 100%;
+        ///            font-family: Arial, Helvetica, sans-serif;
+        ///            font-size: small;
         ///        }
         ///
         ///            #tabT td {
+        ///                padding-top: 5px;
         ///                font-weight: bold;
         ///                padding-right: 40px;
-        ///            }
-        ///
-        ///        table {
-        ///        border-collapse:collapse
-        ///        }
-        ///        div {
-        ///        border-color:black;
-        ///        
-        ///        }
-        ///    &lt;/style&gt;
-        ///
-        ///&lt;/head&gt;
-        ///
-        ///&lt;p&gt;Olá,&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Os colaboradores que são contratado [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///           [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string Uniformes {
             get {
@@ -339,7 +332,6 @@ namespace skaf.Properties {
         ///- Qual o valor unitário da passagem que você utiliza?&lt;/br&gt;
         ///
         ///&lt;/p&gt;
-        ///
         ///.
         /// </summary>
         internal static string VALE_TRANSPORTE {

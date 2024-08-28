@@ -7,11 +7,11 @@
         WindowState="Normal" WindowStyle="SingleBorderWindow"
         IsManipulationEnabled="False"
         mc:Ignorable="d"
-        Title="Config" Height="270" Width="800" ResizeMode="NoResize" Icon="/Screen/alek2.png">
+        Title="Config" Height="270" Width="800" ResizeMode="NoResize" Icon="/Screen/assets/alek2.png">
     <Grid>
 
         <Ellipse HorizontalAlignment="Left" Height="336" Margin="-86,0,0,0" VerticalAlignment="Center" Width="282" Fill="#FF18577B"/>
-        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="10,48,0,0" VerticalAlignment="Top" Width="160" Stretch="Fill" Source="/res/user.png" OpacityMask="White">
+        <Image x:Name="ImageBox" HorizontalAlignment="Left" Height="130" Margin="10,48,0,0" VerticalAlignment="Top" Width="160" Stretch="Fill" Source="/res/imgs/user.png" OpacityMask="White">
             <Image.Effect>
                 <DropShadowEffect BlurRadius="15" ShadowDepth="0"/>
             </Image.Effect>
@@ -34,7 +34,7 @@
             </Button.Style>
             <Button.Content>
                 <StackPanel Orientation="Horizontal" >
-                    <Image Source="/res/edit.png" HorizontalAlignment="Left" Stretch="Fill"/>
+                    <Image Source="/res/imgs/edit.png" HorizontalAlignment="Left" Stretch="Fill"/>
                     <Label VerticalAlignment="Center" Content="Mudar foto" FontFamily="Bahnschrift SemiBold SemiCondensed" FontSize="18" Foreground="White"/>
                 </StackPanel>
 

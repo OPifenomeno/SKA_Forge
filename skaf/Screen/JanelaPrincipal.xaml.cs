@@ -24,7 +24,7 @@ namespace skaf
         {
            
             InitializeComponent();
-           
+            novidades();
             carregarModelos();
            try { VerificarAtt();} catch {  }
         }
@@ -75,9 +75,10 @@ namespace skaf
         void novidades() {
             
             MessageBox.Show("Uma revisão foi feita no app! O que mudou?\n\n" +
-                "-Correção de bugs.\n" +
-                "-Adição do novo" +
-                "Se você perdeu as modificações/modelos que criou, por favor, informe em (emanuel.junior@ska.com.br)");
+                "-Correção de bugs;\n" +
+                "-Adição de emails que faltavam;\n" +
+                "ATENÇÃO:\n"+"1.Caso haja problema com os caminhos de e-mail, vá em configurações -> sair, e em seguida faça login novamente. \n"+
+                "2. Se você perdeu as modificações/modelos que criou, por favor, informe em (emanuel.junior@ska.com.br)");
 
 
 
@@ -85,7 +86,7 @@ namespace skaf
 
         void carregarModelos() {
             
-                novidades();
+                
 
             conteiner.Children.Clear();
             DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));

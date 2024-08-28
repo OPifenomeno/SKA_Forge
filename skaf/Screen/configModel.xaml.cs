@@ -32,7 +32,7 @@ namespace skaf.Screen
             LoadModel();
         }
 
-        public void LoadModel() {
+        public async Task LoadModel() {
             DirectoryInfo past = new (System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails",gpM.ModelName.Text));
             buttonPanel.Children.Clear();
 
@@ -84,7 +84,7 @@ namespace skaf.Screen
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
-            LoadModel();
+            LoadModel().Wait();
 
         }
 
@@ -96,7 +96,7 @@ namespace skaf.Screen
                 string caminhoNovo = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", gpM.ModelName.Text, $"{titleBox.Text}.txt");
                 if (!File.Exists(caminhoNovo)) { File.Move(caminhoAntigo, caminhoNovo); }
                 
-                LoadModel();
+                LoadModel().Wait();
                 using (StreamWriter sw = new StreamWriter(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Emails", gpM.ModelName.Text, $"{titleBox.Text}.txt")))
                 {
                     TextRange tr = new TextRange(TextMail.Document.ContentStart, TextMail.Document.ContentEnd);
@@ -118,7 +118,7 @@ namespace skaf.Screen
             catch {
                 MessageBox.Show("Não foi possível deletar o e-mail.");
             }
-            LoadModel();
+            LoadModel().Wait();
             Button? btFind = buttonPanel.Children.OfType<Button>().FirstOrDefault();
             if (btFind != null) {
                 btFind.RaiseEvent(new RoutedEventArgs(Button.ClickEvent));
