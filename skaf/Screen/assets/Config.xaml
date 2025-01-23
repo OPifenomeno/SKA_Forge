@@ -67,6 +67,7 @@
             <Ellipse StrokeThickness="2" Height="371" Canvas.Left="-145" Stroke="#FFFFC700" Width="372" Canvas.Top="-58" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Ellipse Height="338" Stroke="#FFFFC700" StrokeThickness="5" Width="301" HorizontalAlignment="Left" Canvas.Left="-101" Canvas.Top="-41" VerticalAlignment="Center"/>
             <Label Content="Edite sua Assinatura!" Canvas.Left="380" Canvas.Top="14" HorizontalAlignment="Left" VerticalAlignment="Top" Width="196" FontSize="20"/>
+            <CheckBox x:Name="tratarImgBox" Content="Tratar imagem" Canvas.Left="40" Canvas.Top="10" RenderTransformOrigin="0.511,0.502" Click="tratarImgBox_Click" VerticalAlignment="Bottom"/>
         </Canvas>
         <TextBox x:Name="NomeBox" HorizontalAlignment="Left" Margin="201,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
         <TextBox HorizontalAlignment="Left" Margin="201,91,0,0" TextWrapping="Wrap" Text="Pessoas &amp; Cultura" VerticalAlignment="Top" Width="575" Grid.ColumnSpan="2"/>
