@@ -121,6 +121,37 @@
   <data name="assinatura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\assinatura.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Como_usar_editor" xml:space="preserve">
+    <value>&lt;h1&gt;Ol&amp;aacute;, tudo bem?&lt;/h1&gt;
+&lt;p&gt;Voc&amp;ecirc; pode apagar todo este texto, escrever o seu&amp;nbsp;e depois copie o texto da caixa &amp;agrave; direita e copie no APP!&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;Lembre-se: n&amp;atilde;o adicione sua assinatura aqui, pois isso foi configurado no app!&lt;/p&gt;
+&lt;p&gt;Voc&amp;ecirc; pode criar tudo a sua disposi&amp;ccedil;&amp;atilde;o! Tente:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tabelas&lt;/li&gt;
+&lt;li&gt;Listas&lt;/li&gt;
+&lt;li&gt;Cores de fontes&lt;/li&gt;
+&lt;li&gt;T&amp;iacute;tulos, subt&amp;iacute;tulos&lt;/li&gt;
+&lt;li&gt;Alinhamentos de texto&lt;/li&gt;
+&lt;li&gt;Insira imagens, v&amp;iacute;deos e hiperlinks!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h2&gt;V&amp;Iacute;DEOS E IMAGENS&lt;/h2&gt;
+&lt;p&gt;Para adicionar imagens e v&amp;iacute;deos, voc&amp;ecirc; deve ter o link da m&amp;iacute;dia na internet. Voc&amp;ecirc; pode ser criativo. Se precisar, pode postar no imgur, ou usar um link do seu drive.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;video controls="controls" width="300" height="150"&gt;
+&lt;source src="https://i.imgur.com/jJBh7DG.mp4" type="video/mp4" /&gt;&lt;/video&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;V&amp;iacute;deo inserindo uma imagem do google&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3&gt;Redimensionar imagens e v&amp;iacute;deos&lt;/h3&gt;
+&lt;p&gt;Para editar o tamanho de imagens, arraste-a imagem levemente at&amp;eacute; ficar com a sele&amp;ccedil;&amp;atilde;o azul. Assim aparecer&amp;atilde;o quadrados nos cantos da imagem para redimensionar.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Para editar o tamanho de v&amp;iacute;deos, clique no v&amp;iacute;deo e depois no &amp;iacute;cone de v&amp;iacute;deo na faixa de ferramentas acima.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://imgur.com/jJBh7DG" alt="" /&gt;&lt;/p&gt;
+&lt;p&gt;Se voc&amp;ecirc; colocou um v&amp;iacute;deo e ele aparece com um &amp;iacute;cone cinza de play, voc&amp;ecirc; deve clicar em &lt;strong&gt;Visualizar &amp;gt; Visualizar novamente&lt;/strong&gt;&amp;nbsp;ou no &amp;iacute;cone de olho na faixa de ferramentas. Assim voc&amp;ecirc; consegue ver o resultado final de como seu v&amp;iacute;deo aparecer&amp;aacute; no documento final!&lt;/p&gt;
+&lt;p&gt;&lt;iframe src="//www.youtube.com/embed/63alIv2II1M" width="560" height="314" allowfullscreen="allowfullscreen"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://pbs.twimg.com/profile_images/1863649346463334400/7Wl2vM4o_400x400.jpg" alt="Google &amp;gt; &amp;quot;Gr&amp;ecirc;mio&amp;quot; &amp;gt; Abrir imagem em nova guia &amp;gt; Copiar link" width="160" height="160" /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</value>
+  </data>
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

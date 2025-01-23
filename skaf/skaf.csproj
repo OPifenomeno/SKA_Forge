@@ -110,6 +110,7 @@
     <PackageReference Include="Identity.Client" Version="1.0.0" />
     <PackageReference Include="Microsoft.Graph" Version="5.49.0" />
     <PackageReference Include="Microsoft.Identity.Client" Version="4.60.3" />
+    <PackageReference Include="Microsoft.Office.Interop.Outlook" Version="15.0.4797.1004" />
     <PackageReference Include="NuGet.CommandLine" Version="6.10.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

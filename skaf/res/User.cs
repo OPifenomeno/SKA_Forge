@@ -1,12 +1,13 @@
 ﻿using Azure.Core;
 using Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Definition;
 using skaf.Properties;
+using skaf.Screen;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows;
-
+using Microsoft.Office.Interop.Outlook;
 namespace skaf.res
 {
     public class User
@@ -40,8 +41,16 @@ namespace skaf.res
 
                 if (Settings.Default.imagem != null)
                 {
+                    string imagemHtml = new string("");
+                    if (!Settings.Default.tratarImagem)
+                    {
+                        imagemHtml = $"<img src='data:image/jpeg;base64,{Settings.Default.imagem}' width=\"110\" height=\"110\" />";
+                    }
+                    else
+                    {
+                        imagemHtml = $"<img src='data:image/jpeg;base64,{Settings.Default.imagemTratada}' style=\"object-position:center;width:102px;height:102px;object-fit:cover;filter:grayscale(100%) brightness(5);border-radius:50%;object-fit:cover\" />";
+                    }
 
-                    string imagemHtml = $"<img src='data:image/jpeg;base64,{Settings.Default.imagem}' width=\"136\" height=\"110\"/>";
                     text = text.Replace("@FOTO", imagemHtml);
                 }
                 else
