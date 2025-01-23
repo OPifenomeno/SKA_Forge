@@ -9,7 +9,7 @@
     <Grid>
         <Ellipse x:Name="bolaBack" HorizontalAlignment="Center" Height="0" Stroke="Black" VerticalAlignment="Center" Width="0" Fill="White" Loaded="Load"/>
         <Canvas x:Name="graphs" Loaded="Animar">
-            <Image x:Name="ska_logo"  Source="/res/Logo_SKA_Azul.png" Height="74" HorizontalAlignment="Left" Canvas.Left="174" Canvas.Top="126" VerticalAlignment="Center"/>
+            <Image x:Name="ska_logo"  Source="/res/imgs/Logo_SKA_Azul.png" Height="74" HorizontalAlignment="Left" Canvas.Left="174" Canvas.Top="126" VerticalAlignment="Center"/>
             <Ellipse Height="197" Width="191" HorizontalAlignment="Left" Canvas.Top="340"  Fill="#FF02588B" Canvas.Left="-81"/>
             <Ellipse Height="210" Width="197" Canvas.Top="375" Fill="#FF02588B" HorizontalAlignment="Left" Canvas.Left="277" />
             <Ellipse Height="198" Width="213" Canvas.Top="357" Fill="#FF02588B" Canvas.Left="427" HorizontalAlignment="Left"/>
@@ -34,7 +34,7 @@
             <Button.Content>
                 <Border Background="White" BorderBrush="Black" BorderThickness="2" CornerRadius="12">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Image Source="/res/Microsoft_logo.png" Height="20" Width="21"/>
+                        <Image Source="/res/imgs/Microsoft_logo.png" Height="20" Width="21"/>
                         <TextBlock Text="Login com Microsoft"/>
 
                     </StackPanel>

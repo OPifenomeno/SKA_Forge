@@ -2,7 +2,9 @@
 using NuGet;
 using skaf.Screen;
 using Squirrel;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -22,17 +24,17 @@ namespace skaf
         {
            
             InitializeComponent();
-           
+            novidades();
             carregarModelos();
            try { VerificarAtt();} catch {  }
         }
 
         private async void Atualizar()
         {
-            
             await manager.UpdateApp();
             MessageBox.Show("Reinicie o app!");
-            this.Close();
+            Application.Current.Shutdown();
+            Process.Start(Assembly.GetExecutingAssembly().FullName);
         }
 
         private async void VerificarAtt()
@@ -73,9 +75,10 @@ namespace skaf
         void novidades() {
             
             MessageBox.Show("Uma revisão foi feita no app! O que mudou?\n\n" +
-                "-Correção de bugs.\n" +
-                "-Atualização do layout de uniformes\n\n" +
-                "Se você perdeu as modificações/modelos que criou, por favor, informe em (emanuel.junior@ska.com.br)");
+                "-Correção de bugs;\n" +
+                "-Adição de emails que faltavam;\n" +
+                "ATENÇÃO:\n"+"1.Caso haja problema com os caminhos de e-mail, vá em configurações -> sair, e em seguida faça login novamente. \n"+
+                "2. Se você perdeu as modificações/modelos que criou, por favor, informe em (emanuel.junior@ska.com.br)");
 
 
 
@@ -83,7 +86,7 @@ namespace skaf
 
         void carregarModelos() {
             
-                novidades();
+                
 
             conteiner.Children.Clear();
             DirectoryInfo past = new DirectoryInfo(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Emails"));
@@ -99,7 +102,7 @@ namespace skaf
                   
                    
 
-                    if (!a.Exists)
+                    if (!a.Exists || Properties.Settings.Default.primeiroLogin)
                     {
                         a.Create();
                         File.WriteAllBytes(Path.Combine(a.FullName, "Unimed Fesp Nacional - Apresentação.doc"), Properties.Resource1.Unimed_Fesp_Nacional___Apresentação);
@@ -127,7 +130,7 @@ namespace skaf
                     };
 
 
-                    if (!p.Exists)
+                    if (!p.Exists || Properties.Settings.Default.primeiroLogin)
                     {
                         p.Create();
                     
@@ -180,7 +183,7 @@ namespace skaf
                     };
 
                     //cria arquivo dos e-mails
-                    if (!p1.Exists) { 
+                    if (!p1.Exists || Properties.Settings.Default.primeiroLogin) { 
                         p1.Create();
                     File.WriteAllText(p1 + "/Gympass.txt", Properties.Resource1.Gympass);
                     File.WriteAllText(Path.Combine(p1.FullName, "Vale Transporte.txt"), Properties.Resource1.VALE_TRANSPORTE);
@@ -305,10 +308,11 @@ namespace skaf
 
         private void Sair(object sender, RoutedEventArgs e)
         {
-            new LoginScreen().Show();
+            
             Properties.Settings.Default.primeiroLogin = true;
             Properties.Settings.Default.Save();
-            this.Close();
+            System.Diagnostics.Process.Start(Process.GetCurrentProcess().MainModule.FileName);
+            Application.Current.Shutdown();
         }
 
         private void VerificarAtt(object sender, RoutedEventArgs e)

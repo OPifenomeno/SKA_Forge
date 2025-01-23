@@ -9,14 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Emails\Admissões - Automação\**" />
-    <Compile Remove="Emails\Admissões - Sistemas\**" />
-    <EmbeddedResource Remove="Emails\Admissões - Automação\**" />
-    <EmbeddedResource Remove="Emails\Admissões - Sistemas\**" />
-    <None Remove="Emails\Admissões - Automação\**" />
-    <None Remove="Emails\Admissões - Sistemas\**" />
-    <Page Remove="Emails\Admissões - Automação\**" />
-    <Page Remove="Emails\Admissões - Sistemas\**" />
+    <Compile Remove="res\Emails\Admissões - Automação\**" />
+    <Compile Remove="res\Emails\Admissões - Sistemas\**" />
+    <Compile Remove="res\Emails\Admissões\**" />
+    <EmbeddedResource Remove="res\Emails\Admissões - Automação\**" />
+    <EmbeddedResource Remove="res\Emails\Admissões - Sistemas\**" />
+    <EmbeddedResource Remove="res\Emails\Admissões\**" />
+    <None Remove="res\Emails\Admissões - Automação\**" />
+    <None Remove="res\Emails\Admissões - Sistemas\**" />
+    <None Remove="res\Emails\Admissões\**" />
+    <Page Remove="res\Emails\Admissões - Automação\**" />
+    <Page Remove="res\Emails\Admissões - Sistemas\**" />
+    <Page Remove="res\Emails\Admissões\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -87,19 +91,19 @@
     <Content Include="Resources\VALE_TRANSPORTE.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="res\edit.png">
+    <Content Include="res\imgs\edit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="res\eng.png">
+    <Content Include="res\imgs\eng.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="res\Logo_SKA_Azul.png">
+    <Content Include="res\imgs\Logo_SKA_Azul.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="res\Microsoft_logo.png">
+    <Content Include="res\imgs\Microsoft_logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="res\user.png">
+    <Content Include="res\imgs\user.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="skamail.ico" />
@@ -119,7 +123,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Screen\alek2.png" />
+    <Resource Include="Screen\assets\alek2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -147,7 +151,7 @@
 		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
 		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
 
-		<Version>1.2.7</Version>
+		<Version>1.2.8</Version>
 
 		<NuspecFile>$(SolutionDir)skaf\ReleaseSpec.nuspec</NuspecFile>
 
