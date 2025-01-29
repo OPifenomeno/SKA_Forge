@@ -44,11 +44,12 @@ namespace skaf.res
                     string imagemHtml = new string("");
                     if (!Settings.Default.tratarImagem)
                     {
-                        imagemHtml = $"<img src='data:image/jpeg;base64,{Settings.Default.imagem}' width=\"110\" height=\"110\" />";
+                        imagemHtml = $"<img src='data:image/png;base64,{Settings.Default.imagem}' width=\"110\" height=\"110\" />";
+                        text = text.Replace("border-right:3px solid;", "");
                     }
                     else
                     {
-                        imagemHtml = $"<img src='data:image/jpeg;base64,{Settings.Default.imagemTratada}' style=\"object-position:center;width:102px;height:102px;object-fit:cover;filter:grayscale(100%) brightness(5);border-radius:50%;object-fit:cover\" />";
+                        imagemHtml = $"<img src='data:image/png;base64,{Settings.Default.imagemTratada}' style=\"object-position:center;width:102px;height:102px;object-fit:cover;filter:grayscale(100%);border-radius:50%;object-fit:cover\" />";
                     }
 
                     text = text.Replace("@FOTO", imagemHtml);

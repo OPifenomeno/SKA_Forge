@@ -16,7 +16,6 @@ namespace skaf
     /// </summary>
     public partial class JanelaPrincipal : Window
     {
-        UpdateManager ?manager;
         public JanelaPrincipal()
 
         {
@@ -24,58 +23,18 @@ namespace skaf
             InitializeComponent();
            
             carregarModelos();
-           try { VerificarAtt();} catch {  }
+        
         }
 
-        private async void Atualizar()
-        {
-            
-            await manager.UpdateApp();
-            MessageBox.Show("Reinicie o app!");
-            this.Close();
-        }
-
-        private async void VerificarAtt()
-        {
-            try
-            {
-                manager = await UpdateManager.GitHubUpdateManager(@"https://github.com/OPifenomeno/SKA_Forge");
-
-
-                var updInfo = await manager.CheckForUpdate();
-                if (updInfo.ReleasesToApply.Count > 0)
-                {
-                    MessageBoxResult result = System.Windows.MessageBox.Show("Há atualizações disponíveis. Deseja aplicá-las?", "Atualização Disponível", MessageBoxButton.YesNo, MessageBoxImage.None, MessageBoxResult.No);
-                    if (result == MessageBoxResult.Yes)
-                    {
-
-                        Atualizar();
-
-                    }
-                    else {
-                        MessageBox.Show("Você já tem a última versão!");
-                    }
-
-
-                }
-            }catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-
-        }
-
-
+ 
 
 
         void novidades() {
             
             MessageBox.Show("Uma revisão foi feita no app! O que mudou?\n\n" +
-                "-Correção de bugs.\n" +
-                "-Atualização do layout de uniformes\n\n" +
-                "Se você perdeu as modificações/modelos que criou, por favor, informe em (emanuel.junior@ska.com.br)");
+                "Processamento de fotos automático" +
+                "\n correção de bugs nas configurações no e-mail" +
+                "\n outras coisas que esqueci");
 
 
 
@@ -311,11 +270,7 @@ namespace skaf
             this.Close();
         }
 
-        private void VerificarAtt(object sender, RoutedEventArgs e)
-        {
-            Atualizar();
-            
-        }
+
     }
 
 

@@ -7,7 +7,7 @@
              mc:Ignorable="d" Height="102" Width="819" ClipToBounds="True" HorizontalAlignment="Stretch">
     <Border x:Name="panelAll" BorderBrush="Black" BorderThickness="2" CornerRadius="3">
         <Grid  Background="White" Height="NaN" Margin="0,0,-1,0" ClipToBounds="True" Focusable="True" ToolTip="Adicionar Destino" PreviewMouseRightButtonDown="MenuzitoE">
-            <Button FocusVisualStyle="{x:Null}" Name="SendButton" Panel.ZIndex="2" Content="Enviar para todos" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.186,-0.141" Width="251" Height="28" IsTabStop="False" BorderBrush="{x:Null}" Click="SendButton_Click"/>
+            <Button FocusVisualStyle="{x:Null}" Name="SendButton" Panel.ZIndex="2" Content="Enviar todos" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.186,-0.141" Width="111" Height="28" IsTabStop="False" BorderBrush="{x:Null}" Click="SendButton_Click"/>
             <Button Name="ConfigButton" Panel.ZIndex="2" Content="Config." HorizontalAlignment="Left" Margin="277,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.186,-0.141" Width="44" Height="28" IsTabStop="False" BorderBrush="{x:Null}" Click="AbrirConfig"/>
 
             <ScrollViewer Focusable="false" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Width="474" MouseRightButtonDown="MenuzitoE" Margin="342,0,0,0">
@@ -29,6 +29,7 @@
                 </Button.Style>
             </Button>
             <TextBox MaxLines="1" x:Name="ModelName" HorizontalAlignment="Left" Margin="16,17,0,0" TextWrapping="Wrap" Text="Novo Modelo&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" VerticalAlignment="Top" Width="245" Height="24" FontFamily="Yu Gothic UI" BorderBrush="{x:Null}" IsTabStop="False" TextAlignment="Center" IsHitTestVisible="True" FontSize="20" KeyDown="ConfirmaNome" LostFocus="ModelName_LostFocus" MouseRightButtonDown="MenuzitoE"/>
+            <Button FocusVisualStyle="{x:Null}" x:Name="SendButton_partial" Panel.ZIndex="2" Content="Enviar Selecionados" HorizontalAlignment="Left" Margin="126,64,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.186,-0.141" Width="111" Height="28" IsTabStop="False" BorderBrush="{x:Null}" Click="SendPartial_click"/>
 
 
         </Grid>

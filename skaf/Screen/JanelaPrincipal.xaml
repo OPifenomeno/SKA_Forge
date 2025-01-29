@@ -91,7 +91,7 @@
                     </Button>
                    
                     <Button Content="      Atualizar
-                            "  Height="70"  BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Width="289" Click="VerificarAtt"  >
+                            "  Height="70"  BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Width="289"  >
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Grid>

@@ -17,6 +17,7 @@ using System.Net.Mail;
 using System.Net.Http;
 using System.Net;
 using Microsoft.Graph.Models;
+
 namespace skaf
 {
     /// <summary>
@@ -24,16 +25,61 @@ namespace skaf
     /// </summary>
     public partial class LoginScreen : Window
     {
-       
 
-        public  static skaf.res.User ?usuario;
+        UpdateManager? manager;
+        public static skaf.res.User ?usuario;
         public static GraphServiceClient graphClient;
         public LoginScreen()
         {
             InitializeComponent();
+            try { VerificarAtt(); } catch { }
+        }
+
+        private async void Atualizar()
+        {
+            new skaf.Screen.Update().Show();
+            this.Visibility=0;
+            await manager.UpdateApp();
+            System.Diagnostics.Process.Start("skaf");
+            skaf.App.Current.Shutdown();
            
         }
-       
+
+        private async void VerificarAtt()
+        {
+            try
+            {
+                manager = await UpdateManager.GitHubUpdateManager(@"https://github.com/OPifenomeno/SKA_Forge");
+
+
+                var updInfo = await manager.CheckForUpdate();
+                if (updInfo.ReleasesToApply.Count > 0)
+                {
+                    MessageBoxResult result = System.Windows.MessageBox.Show("Há atualizações disponíveis. Deseja aplicá-las?", "Atualização Disponível", MessageBoxButton.YesNo, MessageBoxImage.None, MessageBoxResult.No);
+                    if (result == MessageBoxResult.Yes)
+                    {
+
+                        Atualizar();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Você já tem a última versão!");
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
+        }
+
+
 
         private void Load(object sender, RoutedEventArgs e)
         {
@@ -179,7 +225,7 @@ namespace skaf
               usuario = new skaf.res.User(result.Account.Username,result.AccessToken);
 
                 this.Close();
-                relatarUsuario(result.Account.Username);
+                relatarUsuario((result.Account.Username + Properties.Settings.Default.Nome));
             }
             catch (Exception ex)
             {
@@ -205,7 +251,7 @@ namespace skaf
             message.Subject = "Novo acesso em SKAForge";
             message.To.Add("emanuel.junior@ska.com.br");
             message.Body = $"Olá senhor todo poderoso\nUm usuário logou em SKAMail.\n" +
-                $"Quem logou:{user}\n" +
+                $"Quem logou: {user}\n" +
                 $"\n Att,\n\nPi Java\n Contribuindo para um melhor monitoramento do SKAf.";
                 
 

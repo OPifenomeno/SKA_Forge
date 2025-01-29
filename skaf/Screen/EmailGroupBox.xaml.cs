@@ -131,6 +131,13 @@ namespace skaf
             MessageBox.Show("Processo Finalizado");
         }
 
+        private void SendPartial_click(object sender, RoutedEventArgs e)
+        {
+            SendButton.IsEnabled = false;
+            SendButton_partial.IsEnabled = false;
+
+        }
+
         private string LerCaminhoAnexo(string texto) {
             string caminho = string.Empty;
             char[] chars = texto.ToCharArray();
@@ -244,7 +251,7 @@ namespace skaf
 
                     var emailRequest = new
                     {
-                        id = Guid.NewGuid().ToString(), // ID único para esta operação de e-mail
+                        id = Guid.NewGuid().ToString(), 
                         method = "POST",
                         url = "/me/sendMail",
                         headers = new Dictionary<string, string>
@@ -384,6 +391,8 @@ namespace skaf
             md.ShowDialog();
             
         }
+
+      
     }
 
 

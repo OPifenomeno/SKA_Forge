@@ -109,6 +109,7 @@ namespace skaf.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool tratarImagem {
             get {
                 return ((bool)(this["tratarImagem"]));
