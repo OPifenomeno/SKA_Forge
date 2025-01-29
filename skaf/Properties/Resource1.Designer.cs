@@ -351,7 +351,6 @@ namespace skaf.Properties {
         ///- Qual o valor unitário da passagem que você utiliza?&lt;/br&gt;
         ///
         ///&lt;/p&gt;
-        ///
         ///.
         /// </summary>
         internal static string VALE_TRANSPORTE {
