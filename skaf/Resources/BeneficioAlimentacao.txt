@@ -1,1 +1,34 @@
-ATUALIZAR
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benefício Alimentação</title>
+</head>
+<body>
+    <p>Olá,</p>
+
+    <p>O benefício alimentação é fornecido através de um cartão, o qual pode ser alimentação ou refeição, o valor mensal fornecido pela SKA é de R$700,00 (mensal), sendo que 20% deste valor (R$140,00) é deduzido no contracheque, de acordo com a lei que regula esse benefício.</p>
+
+    <p>A empresa que presta este serviço junto à SKA, é a <a href="#">Pluxe - Sodexo</a>.</p>
+
+    <p>A data de disponibilidade do crédito do benefício alimentação pode ser consultado através do site Pluxe - Sodexo, selecionando a opção refeição ou alimentação:</p>
+    <ol>
+        <li>100% Vale Alimentação</li>
+        <li>100% Vale Refeição</li>
+        <li>50% Vale Alimentação + 50% Vale Refeição</li>
+    </ol>
+
+    <p>O crédito poderá ocorrer até o dia 05 do mês de competência do benefício podendo, em alguns meses, ocorrer antes dessa data.</p>
+
+    <p>No link abaixo, estão as informações referente a <a href="http://br.sodexo.com/brpo/default.aspx">Pluxe - Sodexo</a></p>
+
+    <p>Cada um poderá escolher, de acordo com sua necessidade o cartão Alimentação (aceito em supermercados) ou Refeição (aceito em restaurantes).</p>
+
+    <p>Se tiver qualquer dúvida, estou à disposição.</p>
+
+    <p>Att,</p>
+</body>
+</html>
+

@@ -79,9 +79,30 @@ namespace skaf.Properties {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a 
+        ///&lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;pt-br&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;title&gt;Benefício Alimentação&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;p&gt;Olá,&lt;/p&gt;
+        ///
+        ///    &lt;p&gt;O benefício alimentação é fornecido através de um cartão, o qual pode ser alimentação ou refeição, o valor mensal fornecido pela SKA é de R$700,00 (mensal), sendo que 20% deste valor (R$140,00) é deduzido no contracheque, de acordo com a lei que regula esse benefício.&lt;/p&gt;
+        ///        /// [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string BeneficioAlimentacao {
+            get {
+                return ResourceManager.GetString("BeneficioAlimentacao", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;h1&gt;Ol&amp;aacute;, tudo bem?&lt;/h1&gt;
         ///&lt;p&gt;Voc&amp;ecirc; pode apagar todo este texto, escrever o seu&amp;nbsp;e depois copie o texto da caixa &amp;agrave; direita e copie no APP!&lt;/p&gt;
-        ///&lt;p&gt;&amp;nbsp;Lembre-se: n&amp;atilde;o adicione sua assinatura aqui, pois isso foi configurado no a&amp;nbsp; pp!&lt;/p&gt;
+        ///&lt;p&gt;&amp;nbsp;Lembre-se: n&amp;atilde;o adicione sua assinatura aqui, pois isso foi configurado no app!&lt;/p&gt;
         ///&lt;p&gt;Voc&amp;ecirc; pode criar tudo a sua disposi&amp;ccedil;&amp;atilde;o! Tente:&lt;/p&gt;
         ///&lt;ul&gt;
         ///&lt;li&gt;Tabelas&lt;/li&gt;
@@ -89,7 +110,7 @@ namespace skaf.Properties {
         ///&lt;li&gt;Cores de fontes&lt;/li&gt;
         ///&lt;li&gt;T&amp;iacute;tulos, subt&amp;iacute;tulos&lt;/li&gt;
         ///&lt;li&gt;Alinhamentos de texto&lt;/li&gt;
-        ///&lt;li&gt;Isira imagens, v&amp;ia [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///&lt;li&gt;Insira imagens, v&amp;iacute;d [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string Como_usar_editor {
             get {
