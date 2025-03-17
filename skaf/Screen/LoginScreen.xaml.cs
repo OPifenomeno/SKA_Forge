@@ -20,7 +20,7 @@ namespace skaf
     {
        
 
-        public  static User ?usuario;
+        public  static skaf.res.User ?usuario;
         public static GraphServiceClient graphClient;
         public LoginScreen()
         {
@@ -142,7 +142,7 @@ namespace skaf
                 Properties.Settings.Default.Nome = Properties.Settings.Default.Nome ?? result.Account.Username;
                 Properties.Settings.Default.token = result.AccessToken;
                 Properties.Settings.Default.Save();
-                usuario = new User(result.Account.Username, result.AccessToken);
+                usuario = new skaf.res.User(result.Account.Username, result.AccessToken);
 
 
             } catch (Exception log) {
@@ -188,6 +188,7 @@ namespace skaf
                 new JanelaPrincipal().Show();
 
                 this.Close();
+                relatarUsuario(result.Account.Username);
             }
             catch (Exception ex)
             {
@@ -196,7 +197,7 @@ namespace skaf
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Falha ao executar Login!: \n" + ex.Message);
+                    System.Windows.MessageBox.Show("Falha ao executar Login!: \n" + ex.Message + "\n\n" + ex.StackTrace);
                 }
                 
             }

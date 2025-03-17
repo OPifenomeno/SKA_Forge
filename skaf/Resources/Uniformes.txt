@@ -1,5 +1,9 @@
 ﻿<head>
     <style>
+        body{
+            
+            font-size:small;
+        }
         #meio {
             text-align: center
         }
@@ -7,9 +11,13 @@
         #tabT {
             border-collapse: collapse;
             text-align: center;
+            width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
         }
 
             #tabT td {
+                padding-top: 5px;
                 font-weight: bold;
                 padding-right: 40px;
             }
@@ -150,7 +158,7 @@
 <hr />
 <!--CAMISA SOCIAL TABELA-->
 <h4><u><b>CAMISA SOCIAL:</b></u></h4>
-<div style="border:solid;width:800px">
+<div style="border:solid;width:684px">
     <center><b><font color="red">MEDIDAS MASCULINAS (Medidas em cm)</font></b></center>
 
 
@@ -161,7 +169,7 @@
                 <td>COSTAS</td>
                 <td>BUSTO</td>
                 <td>COMP.DO CORPO</td>
-                <td>COMP.DA MANDA</td>
+                <td>COMP.DA MANGA</td>
             </tr>
 
             <tr>
@@ -294,7 +302,7 @@
 
 <!--  CAMISA BÁSICA TABELA-->
 <h3><u>CAMISA  VISOLYCRA</u></h3>
-<div style="border:solid;width:800px">
+<div style="border:solid;width:684px">
     <center><b><font color="red">MODELO BÁSICA FEM (Medidas em cm)</font></b></center>
     <table id="tabT">
         <tr style="background-color:darkolivegreen">
@@ -358,7 +366,7 @@
 <!--  CAMISA POLO TABELA  -->
 
 <h3><u>CAMISA POLO:</u></h3>
-<div style="border:solid;width:800px">
+<div style="border:solid;width:684px">
     <center><b><font color="red">POLO MASCULINA TRADICIONAL (Medidas em cm)</font></b></center>
     <table id="tabT">
         <tr style="background-color:royalblue">
@@ -412,7 +420,7 @@
 </div>
 <br />
 <br />
-<div style="border:thin;border:solid;width:800px">
+<div style="border:thin;border:solid;width:684px">
     <center><b><font color="red">POLO FEMININA TRADICIONAL (Medidas em cm)</font></b></center>
     <table id="tabT">
         <tr style="background-color:darkolivegreen">

@@ -1,12 +1,13 @@
 ﻿using Azure.Core;
 using Microsoft.Graph.Print.Printers.Item.Jobs.Item.Tasks.Item.Definition;
 using skaf.Properties;
+using skaf.Screen;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows;
-
+using Microsoft.Office.Interop.Outlook;
 namespace skaf.res
 {
     public class User

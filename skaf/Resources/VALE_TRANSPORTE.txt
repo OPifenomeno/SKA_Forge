@@ -1,14 +1,14 @@
+<p>
+Olá,<br/>
 
-Olá,
+Você utilizará vale transporte?<br/>
 
-Você utilizará vale transporte?
+Se sim, favor me passar as informações a baixo:</br>
 
-Se sim, favor me passar as informações a baixo:
+- Qual a linha de ônibus que utiliza?</br>
+- Qual a empresa que administra a linha?</br>
+- Já possui cartão de transporte? Qual a numeração? </br>
+- Quantas passagens utiliza por dia?</br>
+- Qual o valor unitário da passagem que você utiliza?</br>
 
-- Qual a linha de ônibus que utiliza?
-- Qual a empresa que administra a linha?
-- Já possui cartão de transporte? Qual a numeração? 
-- Quantas passagens utiliza por dia?
-- Qual o valor unitário da passagem que você utiliza?
-
-
+</p>

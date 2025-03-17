@@ -11,7 +11,7 @@
             <Grid DockPanel.Dock="Top" Height="38" Background="#FF0767B7" MouseLeftButtonDown="drag">
                 <Rectangle Panel.ZIndex="10" HorizontalAlignment="Left" Height="32" Margin="36,0,0,0" VerticalAlignment="Center" Width="108" Fill="White">
                     <Rectangle.OpacityMask>
-                        <ImageBrush ImageSource="/res/Logo_SKA_Azul.png" Stretch="Uniform"/>
+                        <ImageBrush ImageSource="/res/imgs/Logo_SKA_Azul.png" Stretch="Uniform"/>
                     </Rectangle.OpacityMask>
 
                 </Rectangle>
@@ -37,7 +37,7 @@
                                             <Border CornerRadius="13.5" Background="#FF0767B7">
                                                 <ContentPresenter  >
                                                     <ContentPresenter.Content>
-                                                        <Image Source="/res/eng.png" Margin="1,0,1,0" ></Image>
+                                                        <Image Source="/res/imgs/eng.png" Margin="1,0,1,0" ></Image>
                                                     </ContentPresenter.Content>
                                                 </ContentPresenter>
                                             </Border>
@@ -50,7 +50,7 @@
                     </Button.Style>
 
                     <Button.Content>
-                        <Image Source="/res/eng.png" Margin="1,0,1,0" ></Image>
+                        <Image Source="/res/imgs/eng.png" Margin="1,0,1,0" ></Image>
                     </Button.Content>
                 </Button>
 
@@ -68,7 +68,7 @@
                         </TransformGroup>
                     </UIElement.RenderTransform>
                     <Grid Height="89">
-                        <Image HorizontalAlignment="Left" Margin="21,10,0,13" Width="68" Source="/res/user.png"/>
+                        <Image HorizontalAlignment="Left" Margin="21,10,0,13" Width="68" Source="/res/imgs/user.png"/>
                         <Label x:Name="userName" Content="Configurações&#xD;&#xA;" Margin="97,24,30,22" FontSize="20" Foreground="White"/>
                     </Grid>
                     <Button x:Name="btPerfil" Content="Perfil
@@ -90,6 +90,23 @@
 
                     </Button>
                    
+                    <Button Content="      Atualizar
+                            "  Height="70"  BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Width="289" Click="VerificarAtt"  >
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Grid>
+                                    <Border x:Name="border" Background="Transparent">
+                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#FF004A79"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                     <Button x:Name="btSair" Content="Sair
                             " Height="70" BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Click="Sair">
                         <Button.Template>
@@ -107,23 +124,6 @@
                             </ControlTemplate>
                         </Button.Template>
 
-                    </Button>
-                    <Button Content="      Atualizar
-                            "  Height="70"  BorderThickness="0,1,0,1" BorderBrush="Transparent" Foreground="White" FontSize="22" FontFamily="Yu Gothic UI Semibold" Focusable="False" Width="289" Click="VerificarAtt"  >
-                        <Button.Template>
-                            <ControlTemplate TargetType="{x:Type Button}">
-                                <Grid>
-                                    <Border x:Name="border" Background="Transparent">
-                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    </Border>
-                                </Grid>
-                                <ControlTemplate.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter TargetName="border" Property="Background" Value="#FF004A79"/>
-                                    </Trigger>
-                                </ControlTemplate.Triggers>
-                            </ControlTemplate>
-                        </Button.Template>
                     </Button>
                 </StackPanel>
 

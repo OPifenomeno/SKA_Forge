@@ -9,8 +9,8 @@
     <license type="expression">MIT</license>
     <description>Aplicativo para criar e editar modelos de e-mail.</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Emanuel Junior</copyright>
-    <tags>email</tags>  
+    <copyright>Pi</copyright>
+    <tags>SKAMail</tags>  
   </metadata>
   <files>
     <file src="bin\Release\net8.0-windows\**" target="lib\net45"/>

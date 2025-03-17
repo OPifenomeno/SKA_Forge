@@ -64,17 +64,36 @@ namespace skaf.Properties {
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;table style=&quot;width:545.75pt&quot;&gt;
         ///    &lt;tbody&gt;
         ///        &lt;tr&gt;
-        ///            &lt;td style=&quot;padding:0cm;width:102pt&quot;&gt;
+        ///            &lt;td  style=&quot;padding-right:10px;border-right:3px solid;border-color:rgb(135,135,135); width:10%&quot;&gt;
         ///                &lt;p style=&quot;line-height:105%;margin:0cm;font-family:Calibri,sans-serif;font-size:11pt&quot;&gt;
         ///                    &lt;span style=&quot;font-family:&amp;quot;Times New Roman&amp;quot;,serif;font-size:10pt;line-height:105%&quot;&gt;@FOTO&lt;/span&gt;
         ///                &lt;/p&gt;
         ///            &lt;/td&gt;
-        ///            &lt;td style=&quot;padding:0cm;width:443.75pt&quot;&gt;
-        ///                &lt;p style=&quot;margin:0cm;font-family:Calibri,sans-serif;font-size:11 [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///            &lt;td style=&quot;padding-left:10px;width:443.75pt&quot;&gt;
+        ///               [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string assinatura {
             get {
                 return ResourceManager.GetString("assinatura", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;h1&gt;Ol&amp;aacute;, tudo bem?&lt;/h1&gt;
+        ///&lt;p&gt;Voc&amp;ecirc; pode apagar todo este texto, escrever o seu&amp;nbsp;e depois copie o texto da caixa &amp;agrave; direita e copie no APP!&lt;/p&gt;
+        ///&lt;p&gt;&amp;nbsp;Lembre-se: n&amp;atilde;o adicione sua assinatura aqui, pois isso foi configurado no a&amp;nbsp; pp!&lt;/p&gt;
+        ///&lt;p&gt;Voc&amp;ecirc; pode criar tudo a sua disposi&amp;ccedil;&amp;atilde;o! Tente:&lt;/p&gt;
+        ///&lt;ul&gt;
+        ///&lt;li&gt;Tabelas&lt;/li&gt;
+        ///&lt;li&gt;Listas&lt;/li&gt;
+        ///&lt;li&gt;Cores de fontes&lt;/li&gt;
+        ///&lt;li&gt;T&amp;iacute;tulos, subt&amp;iacute;tulos&lt;/li&gt;
+        ///&lt;li&gt;Alinhamentos de texto&lt;/li&gt;
+        ///&lt;li&gt;Isira imagens, v&amp;ia [o restante da cadeia de caracteres foi truncado]&quot;;.
+        /// </summary>
+        internal static string Como_usar_editor {
+            get {
+                return ResourceManager.GetString("Como_usar_editor", resourceCulture);
             }
         }
         
@@ -279,6 +298,10 @@ namespace skaf.Properties {
         /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;head&gt;
         ///    &lt;style&gt;
+        ///        body{
+        ///            
+        ///            font-size:small;
+        ///        }
         ///        #meio {
         ///            text-align: center
         ///        }
@@ -286,27 +309,16 @@ namespace skaf.Properties {
         ///        #tabT {
         ///            border-collapse: collapse;
         ///            text-align: center;
+        ///            width: 100%;
+        ///            font-family: Arial, Helvetica, sans-serif;
+        ///            font-size: small;
         ///        }
         ///
         ///            #tabT td {
+        ///                padding-top: 5px;
         ///                font-weight: bold;
         ///                padding-right: 40px;
-        ///            }
-        ///
-        ///        table {
-        ///        border-collapse:collapse
-        ///        }
-        ///        div {
-        ///        border-color:black;
-        ///        
-        ///        }
-        ///    &lt;/style&gt;
-        ///
-        ///&lt;/head&gt;
-        ///
-        ///&lt;p&gt;Olá,&lt;/p&gt;
-        ///&lt;p&gt;
-        ///    Os colaboradores que são contratado [o restante da cadeia de caracteres foi truncado]&quot;;.
+        ///           [o restante da cadeia de caracteres foi truncado]&quot;;.
         /// </summary>
         internal static string Uniformes {
             get {
@@ -325,20 +337,20 @@ namespace skaf.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a 
-        ///Olá,
+        ///   Consulta uma cadeia de caracteres localizada semelhante a &lt;p&gt;
+        ///Olá,&lt;br/&gt;
         ///
-        ///Você utilizará vale transporte?
+        ///Você utilizará vale transporte?&lt;br/&gt;
         ///
-        ///Se sim, favor me passar as informações a baixo:
+        ///Se sim, favor me passar as informações a baixo:&lt;/br&gt;
         ///
-        ///- Qual a linha de ônibus que utiliza?
-        ///- Qual a empresa que administra a linha?
-        ///- Já possui cartão de transporte? Qual a numeração? 
-        ///- Quantas passagens utiliza por dia?
-        ///- Qual o valor unitário da passagem que você utiliza?
+        ///- Qual a linha de ônibus que utiliza?&lt;/br&gt;
+        ///- Qual a empresa que administra a linha?&lt;/br&gt;
+        ///- Já possui cartão de transporte? Qual a numeração? &lt;/br&gt;
+        ///- Quantas passagens utiliza por dia?&lt;/br&gt;
+        ///- Qual o valor unitário da passagem que você utiliza?&lt;/br&gt;
         ///
-        ///
+        ///&lt;/p&gt;
         ///.
         /// </summary>
         internal static string VALE_TRANSPORTE {
