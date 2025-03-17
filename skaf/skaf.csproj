@@ -151,7 +151,7 @@
 		<NugetTools>$(PkgNuGet_CommandLine)\tools</NugetTools>
 		<SquirrelTools>$(Pkgsquirrel_windows)\tools</SquirrelTools>
 
-		<Version>1.4.1</Version>
+		<Version>1.4.5</Version>
 
 		<NuspecFile>$(SolutionDir)skaf\ReleaseSpec.nuspec</NuspecFile>
 

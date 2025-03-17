@@ -133,7 +133,7 @@ namespace skaf
 
         private void SendPartial_click(object sender, RoutedEventArgs e)
         {
-            SendButton.IsEnabled = false;
+            MessageBox.Show("Em breve.\n\n\"Foi mal não consegui colocar ainda\"");
             SendButton_partial.IsEnabled = false;
 
         }

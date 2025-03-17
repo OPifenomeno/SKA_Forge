@@ -158,7 +158,7 @@
         <RichTextBox Style="{DynamicResource TextMail}"  x:Name="TextMail" Grid.Column="1" Margin="22,73,22,169" IsDocumentEnabled="True" FontFamily="Courier New" Loaded="TextMail_Loaded">
 
         </RichTextBox>
-        <TextBox x:Name="titleBox" MaxLines="1" Grid.Column="1" Margin="22,30,22,0" TextWrapping="Wrap" Height="31" FontSize="20" TextAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox x:Name="titleBox" MaxLines="1" Grid.Column="1" Margin="22,30,74,0" TextWrapping="Wrap" Height="31" FontSize="20" TextAlignment="Center" VerticalAlignment="Top"/>
         <Label Grid.Column="1" Content="Título" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="0,-2,0,0"/>
         <Button Grid.Column="1" Content="Salvar" Margin="0,0,10,6" Height="22" VerticalAlignment="Bottom" BorderBrush="#FF329300" Foreground="#FF206C05" Background="White" Click="SalvarModel" HorizontalAlignment="Right" Width="129"/>
         <ListBox x:Name="attachPanel" Grid.Column="1" Margin="22,0,22,46" d:ItemsSource="{d:SampleData ItemCount=5}" Height="102" VerticalAlignment="Bottom"/>

@@ -232,5 +232,10 @@ namespace skaf.Screen
                 catch(Exception exp){ MessageBox.Show(exp.Message); }
             }
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
