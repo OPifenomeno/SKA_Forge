@@ -1,29 +1,21 @@
 ﻿using Microsoft.Graph;
-using Microsoft.Graph.Me.SendMail;
-using Microsoft.Graph.Models;
+
 using Newtonsoft.Json;
 using skaf.Screen;
-using System;
-using System.Collections.Generic;
+
 using System.IO;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Net.Mail;
+
 using System.Text;
-using System.Text.Json.Nodes;
-using System.Threading.Tasks;
+
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Xml;
+
 
 namespace skaf
 {
@@ -128,7 +120,8 @@ namespace skaf
 
             }
             SendButton.IsEnabled = true;
-            MessageBox.Show("Processo Finalizado");
+
+            MessageBox.Show("Processo finalizado.");
         }
 
         private string LerCaminhoAnexo(string texto) {

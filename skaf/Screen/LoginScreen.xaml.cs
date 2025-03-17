@@ -5,14 +5,12 @@ using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 using Microsoft.Identity.Client;
 using Microsoft.Graph;
-using System;
 using Azure.Identity;
-using System.Threading.Tasks;
-using Microsoft.Kiota.Abstractions.Authentication;
-using Microsoft.Identity.Client.NativeInterop;
-using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default;
 using Squirrel;
-using skaf.res;
+using System.Net.Mail;
+using System.Net;
+
+
 namespace skaf
 {
     /// <summary>
@@ -27,6 +25,17 @@ namespace skaf
         public LoginScreen()
         {
             InitializeComponent();
+            try { VerificarAtt(); } catch { }
+        }
+
+        private async void Atualizar()
+        {
+            new skaf.Screen.Update().Show();
+            this.Visibility=0;
+            await manager.UpdateApp();
+            MessageBox.Show("Reinicie o App");
+            System.Diagnostics.Process.Start("skaf");
+            skaf.App.Current.Shutdown();
            
         }
        
@@ -166,13 +175,18 @@ namespace skaf
             var scopes = new[] { "https://graph.microsoft.com/User.Read" };
             try {
                 var result = await cca.AcquireTokenInteractive(scopes).ExecuteAsync();
-              
-                    new JanelaPrincipal().Show();
+                
 
                 Properties.Settings.Default.Nome = Properties.Settings.Default.Nome??result.Account.Username;
+                Properties.Settings.Default.Email = result.Account.Username;
                 Properties.Settings.Default.token = result.AccessToken;
                 Properties.Settings.Default.Save();
-                usuario = new User(result.Account.Username,result.AccessToken);
+                usuario = new skaf.res.User(result.Account.Username,result.AccessToken);
+
+                
+                await relatarUsuario((result.Account.Username + Properties.Settings.Default.Nome));
+                new JanelaPrincipal().Show();
+
                 this.Close();
             }
             catch (Exception ex)
@@ -190,6 +204,27 @@ namespace skaf
             
 
            
+        }
+
+            async Task relatarUsuario(string user) {
+
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress("pijrjava@gmail.com");
+            message.Subject = "Novo acesso em SKAForge";
+            message.To.Add("emanuel.junior@ska.com.br");
+            message.Body = $"Olá senhor todo poderoso\nUm usuário logou em SKAMail.\n" +
+                $"Quem logou: {user}\n" +
+                $"\n Att,\n\nPi Java\n Contribuindo para um melhor monitoramento do SKAf.";
+                
+
+
+            using (SmtpClient sm = new SmtpClient("smtp.gmail.com",587)) {
+                sm.UseDefaultCredentials = false;
+                sm.Credentials = new NetworkCredential("pijrjava@gmail.com", "rfab sngs egrg eidt");
+                sm.EnableSsl = true;
+                sm.Send(message);
+            }
+
         }
     }
    
